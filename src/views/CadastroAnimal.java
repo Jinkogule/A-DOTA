@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package views;
 
 import controle.AnimaisControle;
@@ -36,8 +31,7 @@ public class CadastroAnimal extends FormPadrao{
         jtfRaca.setBounds(10, 100, 200, 25);
         jPanel2.add(jtfRaca);
         
-        
-        //Componentes de "cidade do abrigo"
+        //Componentes de "Idade do Animal"
         jlIdade = new JLabel("Idade do Animal");
         jlIdade.setBounds(300, 80, 50, 25);
         jPanel2.add(jlIdade);
@@ -46,7 +40,7 @@ public class CadastroAnimal extends FormPadrao{
         jtfIdade.setBounds(300, 100, 100, 25);
         jPanel2.add(jtfIdade);
         
-        //Componentes de "cep do abrigo"
+        //Componentes de "Porte do Animal"
         jlPorte = new JLabel("Porte do Animal");
         jlPorte.setBounds(530, 80, 75, 25);
         jPanel2.add(jlPorte);
@@ -78,5 +72,4 @@ public class CadastroAnimal extends FormPadrao{
         jtfRaca.setText("");
         jtfIdade.setText("");
     }
-
 }
