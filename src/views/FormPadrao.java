@@ -27,6 +27,11 @@ abstract public class FormPadrao extends javax.swing.JInternalFrame {
         jtfConsulta = new JTextField();
         jtfConsulta.setBounds(10, 5, 595, 25);
         jpnConsulta.add(jtfConsulta);
+
+        //Centraliza o formulário
+        Toolkit toolkit = getToolkit();
+        Dimension size = toolkit.getScreenSize();
+        setLocation(size.width/2 - getWidth()/2, size.height/2 - getHeight()/2);
     }
 
     @SuppressWarnings("unchecked")
