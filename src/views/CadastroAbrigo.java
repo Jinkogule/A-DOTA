@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package views;
 
 import controle.AbrigoControle;
@@ -10,14 +5,7 @@ import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-/**
- *
- * @author lucas
- */
 public class CadastroAbrigo extends FormPadrao{
-    
-    JLabel jlNomeAbrigo;
-    JTextField jtfNomeAbrigo;
     
     JLabel jlDonoDoAbrigo;
     JTextField jtfDonoDoAbrigo;
@@ -57,6 +45,9 @@ public class CadastroAbrigo extends FormPadrao{
         jcbEstado = new JComboBox();
         jcbEstado.setBounds(300, 100, 100, 25);
         jPanel2.add(jcbEstado);
+        //temporário para realizar testes
+        jcbCidade.addItem("")
+        jcbEstado.addItem("Rio de Janeiro");
         
         //Componentes de "cidade do abrigo"
         jlCidade = new JLabel("Cidade");
@@ -66,6 +57,9 @@ public class CadastroAbrigo extends FormPadrao{
         jcbCidade = new JComboBox();
         jcbCidade.setBounds(415, 100, 100, 25);
         jPanel2.add(jcbCidade);
+        //temporário para realizar testes
+        jcbCidade.addItem("")
+        jcbCidade.addItem("Niterói");
         
         //Componentes de "cep do abrigo"
         jlCEP = new JLabel("CEP");
@@ -91,7 +85,7 @@ public class CadastroAbrigo extends FormPadrao{
 
     @Override
     public void salvar() {
-        controle.salvarControle(jtfId.getText(), jtfNome.getText(), jtfDonoDoAbrigo.getText(), jtfEndereco.getText(), jtfCEP.getText());
+        controle.salvarControle(jtfId.getText(), jtfNome.getText(), jtfDonoDoAbrigo.getText(), jcbEstado.getSelectedItem(), jcbCidade.getSelectedItem(), jtfEndereco.getText(), jtfCEP.getText());
     }
 
     @Override
@@ -107,7 +101,8 @@ public class CadastroAbrigo extends FormPadrao{
     @Override
     public void limpaCampo() {
         jtfNome.setText("");
-        jtfNome.setText("");
+        jcbEstado.setSelectedIndex(0);
+        jcbCidade.setSelectedIndex(0);
         jtfDonoDoAbrigo.setText("");
         jtfCEP.setText("");
         jtfEndereco.setText("");
