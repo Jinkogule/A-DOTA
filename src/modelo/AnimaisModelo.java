@@ -1,21 +1,30 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package modelo;
 
-/**
- *
- * @author Lucas Couto
- */
 public class AnimaisModelo {
     //Variáveis tem que ser de tipo igual ao tipo delas no BD
     private int Id;
     private String Nome_Animal;
+    private String Tipo;
     private String Raca;
     private int Idade;
     private String Porte;
+    private String Cor;
+
+    public String getCor() {
+        return Cor;
+    }
+
+    public void setCor(String Cor) {
+        this.Cor = Cor;
+    }
+
+    public String getTipo() {
+        return Tipo;
+    }
+
+    public void setTipo(String Tipo) {
+        this.Tipo = Tipo;
+    }
     
     public int getId() {
         return Id;
@@ -56,5 +65,4 @@ public class AnimaisModelo {
     public void setPorte(String Porte) {
         this.Porte = Porte;
     }
-    
 }
