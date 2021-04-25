@@ -1,18 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package controle;
 
 import dao.AbrigoDao;
 import interfaces.InterfaceControle;
 import modelo.AbrigoModelo;
 
-/**
- *
- * @author lucas
- */
 public class AbrigoControle implements InterfaceControle{
     
     AbrigoModelo am = new AbrigoModelo();
@@ -27,11 +18,12 @@ public class AbrigoControle implements InterfaceControle{
         else{
             am.setId((int)valor[0]);
         }
-       
         am.setNome_Abrigo((String)valor[1]);
         am.setNome_Dono((String)valor[2]);
-        am.setEndereco((String)valor[3]);
-        am.setCEP((String)valor[4]);
+        am.setEstado((String)valor[3]);
+        am.setCidade((String)valor[4]);
+        am.setEndereco((String)valor[5]);
+        am.setCEP((String)valor[6]);
         
         //Enviar informações para o DAO
         ad.salvarDao(am);
@@ -46,5 +38,4 @@ public class AbrigoControle implements InterfaceControle{
     public void carregarComboBox() {
         
     }
-    
 }
