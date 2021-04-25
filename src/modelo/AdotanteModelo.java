@@ -1,5 +1,10 @@
 package modelo;
 
+/**
+ *
+ * @author Gabriel
+ */
+
 public class AdotanteModelo {
     //Variáveis tem que ser de tipo igual ao tipo delas no BD
     private int Id;
