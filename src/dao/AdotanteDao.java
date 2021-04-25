@@ -7,7 +7,10 @@ import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import modelo.AbrigoModelo;
 import modelo.AdotanteModelo;
-
+/**
+ *
+ * @author Gabriel
+ */
 public class AdotanteDao implements InterfaceDao{
 
     String sql;
