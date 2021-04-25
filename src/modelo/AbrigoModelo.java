@@ -1,13 +1,30 @@
 package modelo;
 
-
 public class AbrigoModelo {
     //Variáveis tem que ser de tipo igual ao tipo delas no BD
     private int Id;
     private String Nome_Abrigo;
     private String Nome_Dono;
+    private String Estado;
+    private String Cidade;
     private String Endereco;
     private String CEP;
+
+    public String getEstado() {
+        return Estado;
+    }
+
+    public void setEstado(String Estado) {
+        this.Estado = Estado;
+    }
+
+    public String getCidade() {
+        return Cidade;
+    }
+
+    public void setCidade(String Cidade) {
+        this.Cidade = Cidade;
+    }
 
     public String getEndereco() {
         return Endereco;
@@ -48,5 +65,4 @@ public class AbrigoModelo {
     public void setNome_Dono(String Nome_Dono) {
         this.Nome_Dono = Nome_Dono;
     }
- 
 }
