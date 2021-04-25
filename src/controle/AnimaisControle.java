@@ -1,18 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package controle;
 
 import dao.AnimaisDao;
 import interfaces.InterfaceControle;
 import modelo.AnimaisModelo;
 
-/**
- *
- * @author Lucas Couto
- */
 public class AnimaisControle implements InterfaceControle{
     
     AnimaisModelo am = new AnimaisModelo();
@@ -27,11 +18,17 @@ public class AnimaisControle implements InterfaceControle{
         else{
             am.setId((int)valor[0]);
         }
-       
         am.setNome_Animal((String)valor[1]);
-        am.setRaca((String)valor[2]);
-        am.setIdade((int)valor[3]);
-        am.setPorte((String)valor[4]);
+        am.setTipo((String)valor[2]);
+        am.setRaca((String)valor[3]);
+        try{//caso idade não seja um inteiro. 
+            am.setIdade(Integer.parseInt((String)valor[4]));
+        }
+        catch (Exception e){
+            am.setIdade(-1);//Tratado no DAO
+        }
+        am.setPorte((String)valor[5]);
+        am.setCor((String)valor[6]);
         
         //Enviar informações para o DAO
         ad.salvarDao(am);
@@ -45,6 +42,5 @@ public class AnimaisControle implements InterfaceControle{
     @Override
     public void carregarComboBox() {
         
-    }
-    
+    }  
 }
