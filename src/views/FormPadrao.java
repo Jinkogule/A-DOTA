@@ -1,10 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package views;
 
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
@@ -13,7 +10,6 @@ abstract public class FormPadrao extends javax.swing.JInternalFrame {
     JLabel jlConsulta;
     JTextField jtfConsulta;
     
-    // Contrutor do método
     public FormPadrao() {
         initComponents();
         iniciarComponentes();
@@ -27,7 +23,7 @@ abstract public class FormPadrao extends javax.swing.JInternalFrame {
         jtfConsulta = new JTextField();
         jtfConsulta.setBounds(10, 5, 595, 25);
         jpnConsulta.add(jtfConsulta);
-
+        
         //Centraliza o formulário
         Toolkit toolkit = getToolkit();
         Dimension size = toolkit.getScreenSize();
@@ -35,7 +31,7 @@ abstract public class FormPadrao extends javax.swing.JInternalFrame {
     }
 
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
@@ -211,43 +207,43 @@ abstract public class FormPadrao extends javax.swing.JInternalFrame {
         );
 
         pack();
-    }// </editor-fold>//GEN-END:initComponents
+    }// </editor-fold>                        
 
-    private void jbFecharActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbFecharActionPerformed
+    private void jbFecharActionPerformed(java.awt.event.ActionEvent evt) {                                         
         dispose();
-    }//GEN-LAST:event_jbFecharActionPerformed
+    }                                        
 
-    private void jbLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLimparActionPerformed
+    private void jbLimparActionPerformed(java.awt.event.ActionEvent evt) {                                         
         habilitaBotoes(true);
         habilitaCampos(false);
-    }//GEN-LAST:event_jbLimparActionPerformed
+    }                                        
 
-    private void jbSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSalvarActionPerformed
+    private void jbSalvarActionPerformed(java.awt.event.ActionEvent evt) {                                         
         habilitaBotoes(true);
         habilitaCampos(false);
         salvar();
-    }//GEN-LAST:event_jbSalvarActionPerformed
+    }                                        
 
-    private void jbAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAlterarActionPerformed
+    private void jbAlterarActionPerformed(java.awt.event.ActionEvent evt) {                                          
         habilitaBotoes(false);
         habilitaCampos(true);
         jtfNome.requestFocus();
-    }//GEN-LAST:event_jbAlterarActionPerformed
+    }                                         
 
-    private void jbNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbNovoActionPerformed
+    private void jbNovoActionPerformed(java.awt.event.ActionEvent evt) {                                       
         habilitaBotoes(false);
         habilitaCampos(true);
         limpaCampo();
         jtfNome.requestFocus();
-    }//GEN-LAST:event_jbNovoActionPerformed
+    }                                      
 
-    private void jtfNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfNomeActionPerformed
+    private void jtfNomeActionPerformed(java.awt.event.ActionEvent evt) {                                        
         // TODO add your handling code here:
-    }//GEN-LAST:event_jtfNomeActionPerformed
+    }                                       
 
-    private void jtfIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfIdActionPerformed
+    private void jtfIdActionPerformed(java.awt.event.ActionEvent evt) {                                      
         // TODO add your handling code here:
-    }//GEN-LAST:event_jtfIdActionPerformed
+    }                                     
     
     //Métodos abstratos
     abstract public void iniciarComponentes();
@@ -262,13 +258,28 @@ abstract public class FormPadrao extends javax.swing.JInternalFrame {
         jbLimpar.setEnabled(!estado);
     }
     
+    //Método que padroniza as strings enviadas pelo usuário
+    public static String padronizaString(String string){
+        String padronizada = string.toLowerCase().replaceAll("\s+"," ");;
+
+        char[] array = padronizada.toCharArray();
+        array[0] = Character.toUpperCase(array[0]);
+
+        for (int i = 1; i < array.length; i++) {
+            if (Character.isWhitespace(array[i - 1])) {
+                array[i] = Character.toUpperCase(array[i]);
+            }
+        }
+        return new String(array);
+    }
+
     //Metodo para habilitar e desabilitar acesso aos campos de edição
     abstract public void habilitaCampos(boolean estado);
     
     //Metodo para limpar os campos do formulário
     abstract public void limpaCampo();
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+    // Variables declaration - do not modify                     
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
@@ -282,5 +293,5 @@ abstract public class FormPadrao extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jpnConsulta;
     public javax.swing.JTextField jtfId;
     public javax.swing.JTextField jtfNome;
-    // End of variables declaration//GEN-END:variables
+    // End of variables declaration                   
 }
