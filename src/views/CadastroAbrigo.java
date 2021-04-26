@@ -1,11 +1,18 @@
 package views;
 
 import controle.AbrigoControle;
+import dao.ConnectDB;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 public class CadastroAbrigo extends FormPadrao{
+    ConnectDB teste = new ConnectDB();
     
     JLabel jlDonoDoAbrigo;
     JTextField jtfDonoDoAbrigo;
@@ -24,6 +31,8 @@ public class CadastroAbrigo extends FormPadrao{
     
     public CadastroAbrigo(){
         setTitle("Cadastro de Abrigo");
+        preencheEstado();
+        preencheCidade();
     }
 
     @Override
@@ -39,27 +48,23 @@ public class CadastroAbrigo extends FormPadrao{
         
         //Componentes de "Estado do abrigo"
         jlEstado = new JLabel("Estado");
-        jlEstado.setBounds(300, 80, 50, 25);
+        jlEstado.setBounds(220, 80, 50, 25);
         jPanel2.add(jlEstado);
         
         jcbEstado = new JComboBox();
-        jcbEstado.setBounds(300, 100, 100, 25);
+        jcbEstado.setBounds(220, 100, 150, 25);
         jPanel2.add(jcbEstado);
-        //temporário para realizar testes
-        jcbCidade.addItem("")
-        jcbEstado.addItem("Rio de Janeiro");
+        jcbEstado.addItem("");
         
         //Componentes de "cidade do abrigo"
         jlCidade = new JLabel("Cidade");
-        jlCidade.setBounds(415, 80, 50, 25);
+        jlCidade.setBounds(375, 80, 50, 25);
         jPanel2.add(jlCidade);
         
         jcbCidade = new JComboBox();
-        jcbCidade.setBounds(415, 100, 100, 25);
+        jcbCidade.setBounds(375, 100, 150, 25);
         jPanel2.add(jcbCidade);
-        //temporário para realizar testes
-        jcbCidade.addItem("")
-        jcbCidade.addItem("Niterói");
+        jcbCidade.addItem("");
         
         //Componentes de "cep do abrigo"
         jlCEP = new JLabel("CEP");
@@ -87,7 +92,7 @@ public class CadastroAbrigo extends FormPadrao{
     public void salvar() {
         controle.salvarControle(jtfId.getText(), jtfNome.getText(), jtfDonoDoAbrigo.getText(), jcbEstado.getSelectedItem(), jcbCidade.getSelectedItem(), jtfEndereco.getText(), jtfCEP.getText());
     }
-
+    
     @Override
     public void habilitaCampos(boolean estado) {
         jtfNome.setEnabled(estado);
@@ -97,7 +102,37 @@ public class CadastroAbrigo extends FormPadrao{
         jtfCEP.setEnabled(estado);
         jtfEndereco.setEnabled(estado);
     }
-
+    //preenche JComboBox Estado
+    public void preencheEstado(){
+        teste.abreConexao();
+        teste.executaSQL("select nome from estados");
+        try{
+            teste.rs.first();
+            do{
+                jcbEstado.addItem(teste.rs.getString("nome"));
+            }
+            while(teste.rs.next());
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Erro ao preencher Estados."+e);
+        }
+    }
+    //preenche JComboBox Cidade
+    public void preencheCidade(){
+        teste.abreConexao();
+        teste.executaSQL("select nome from cidades order by nome");
+        try{
+            teste.rs.first();
+            do{
+                jcbCidade.addItem(teste.rs.getString("nome"));
+            }
+            while(teste.rs.next());
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Erro ao preencher Cidades."+e);
+        }
+    }
+        
     @Override
     public void limpaCampo() {
         jtfNome.setText("");
