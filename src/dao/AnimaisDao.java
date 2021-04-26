@@ -12,6 +12,7 @@ public class AnimaisDao implements InterfaceDao{
     
     String sql;
     PreparedStatement stm;
+    ConnectDB conexao = new ConnectDB();
 
     @Override
     public void salvarDao(Object... valor) {
@@ -30,7 +31,8 @@ public class AnimaisDao implements InterfaceDao{
         }
 
         try{
-            stm = ConnectDB.abreConexao().prepareStatement(sql);
+            conexao.abreConexao();
+            stm = conexao.con.prepareStatement(sql);
             stm.setString(1, Nome_Animal);
             stm.setString(2, am.getTipo());
             stm.setString(3, Raca);
@@ -42,10 +44,10 @@ public class AnimaisDao implements InterfaceDao{
             }
             
             //Tratando ocorrência de dados inválidos
-            if (!(am.getNome_Animal().matches("[A-Za-z - ã - ãá - áâ - âó - óô - ôó - óí - íú - úç - çü - ü]+")) || am.getNome_Animal().isBlank()){
+            if (!(am.getNome_Animal().matches("[A-Za-z - ã-ãá-áâ-âó-óô-ôó-óí-íú-úç-çü-ü]+")) || am.getNome_Animal().isBlank()){
                 throw new IllegalArgumentException("Nome inválido.");
             }
-            if (am.getTipo() == ""){
+            if ("".equals(am.getTipo())){
                 throw new IllegalArgumentException("Insira o valor de TIPO.");
             }
             if (!(am.getRaca().matches("[A-Za-z - ã - ãá - áâ - âó - óô - ôó - óí - íú - úç - ç]+")) || am.getNome_Animal().isBlank()){
@@ -54,7 +56,7 @@ public class AnimaisDao implements InterfaceDao{
             if (am.getIdade() < 0){
                 throw new IllegalArgumentException("Idade inválida.");
             }
-            if (am.getPorte() == ""){
+            if ("".equals(am.getPorte())){
                 throw new IllegalArgumentException("Insira o valor de PORTE.");
             }
             if (!(am.getCor().matches("[A-Za-z - ]+")) || am.getNome_Animal().isBlank()){
