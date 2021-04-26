@@ -1,2 +1,2 @@
 # POO
-Trabalho de POO feito com Lucas Pimenta e Lucas Couto
+Trabalho de POO feito com Gabriel Barbedo, Lucas Pimenta e Lucas Couto
