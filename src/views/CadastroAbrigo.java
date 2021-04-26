@@ -2,10 +2,6 @@ package views;
 
 import controle.AbrigoControle;
 import dao.ConnectDB;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
