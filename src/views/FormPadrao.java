@@ -260,17 +260,20 @@ abstract public class FormPadrao extends javax.swing.JInternalFrame {
     
     //Método que padroniza as strings enviadas pelo usuário
     public static String padronizaString(String string){
-        String padronizada = string.toLowerCase().replaceAll("\s+"," ");;
-
-        char[] array = padronizada.toCharArray();
-        array[0] = Character.toUpperCase(array[0]);
-
-        for (int i = 1; i < array.length; i++) {
-            if (Character.isWhitespace(array[i - 1])) {
-                array[i] = Character.toUpperCase(array[i]);
-            }
+        if (string.isBlank()){
+            return string;
         }
+        else{
+            String padronizada = string.toLowerCase().replaceAll("\s+"," ");;
+            char[] array = padronizada.toCharArray();
+            array[0] = Character.toUpperCase(array[0]);
+            for (int i = 1; i < array.length; i++) {
+                if (Character.isWhitespace(array[i - 1])) {
+                    array[i] = Character.toUpperCase(array[i]);
+                }
+            }
         return new String(array);
+        }
     }
 
     //Metodo para habilitar e desabilitar acesso aos campos de edição
