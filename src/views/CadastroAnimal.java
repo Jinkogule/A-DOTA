@@ -1,11 +1,14 @@
 package views;
 
 import controle.AnimaisControle;
+import dao.ConnectDB;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 public class CadastroAnimal extends FormPadrao{
+    ConnectDB conexao = new ConnectDB();
     
     JLabel jlTipo;
     JComboBox jcbTipo;
@@ -22,8 +25,12 @@ public class CadastroAnimal extends FormPadrao{
     JLabel jlCor;
     JTextField jtfCor;
     
+    JLabel jlAbrigo;
+    JComboBox jcbAbrigo;
+    
     public CadastroAnimal(){
         setTitle("Cadastro de Animal");
+        preencheAbrigo();
     }
 
     @Override
@@ -80,13 +87,41 @@ public class CadastroAnimal extends FormPadrao{
         jtfCor.setBounds(10, 160, 200, 25);
         jPanel2.add(jtfCor);
         
+        //Componentes de "Abrigo do Animal"
+        jlAbrigo = new JLabel("Abrigo");
+        jlAbrigo.setBounds(475, 80, 75, 25);
+        jPanel2.add(jlAbrigo);
+        
+        jcbAbrigo = new JComboBox();
+        jcbAbrigo.setBounds(475, 100, 133, 25);
+        jPanel2.add(jcbAbrigo);
+        jcbAbrigo.addItem("");
+
+        
     }
     
     AnimaisControle controle = new AnimaisControle();
 
     @Override
     public void salvar() {
-        controle.salvarControle(jtfId.getText(), jtfNome.getText(), jcbTipo.getSelectedItem(), jtfRaca.getText(), jtfIdade.getText(), jcbPorte.getSelectedItem(), jtfCor.getText());
+        controle.salvarControle(jtfId.getText(), jtfNome.getText(), jcbTipo.getSelectedItem(), jtfRaca.getText(), jtfIdade.getText(), jcbPorte.getSelectedItem(), jtfCor.getText(), jcbAbrigo.getSelectedItem());
+    }
+    
+    //preenche JComboBox Abrigo
+    public void preencheAbrigo(){
+        conexao.abreConexao();
+        conexao.executaSQL("select Nome_Abrigo from abrigo order by Nome_Abrigo");
+        try{
+            conexao.rs.first();
+            do{
+                jcbAbrigo.addItem(conexao.rs.getString("Nome_Abrigo"));
+            }
+            while(conexao.rs.next());
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Erro ao preencher Abrigos."+e);
+        }
+        conexao.desconecta();
     }
 
     @Override
@@ -97,6 +132,7 @@ public class CadastroAnimal extends FormPadrao{
         jtfIdade.setEnabled(estado);
         jcbPorte.setEnabled(estado);
         jtfCor.setEnabled(estado);
+        jcbAbrigo.setEnabled(estado);
     }
 
     @Override
@@ -107,5 +143,6 @@ public class CadastroAnimal extends FormPadrao{
         jtfIdade.setText("");
         jcbPorte.setSelectedIndex(0);
         jtfCor.setText("");
+        jcbAbrigo.setSelectedIndex(0);
     }
 }

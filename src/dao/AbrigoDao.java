@@ -44,10 +44,10 @@ public class AbrigoDao implements InterfaceDao{
             }
             
             //tratando ocorrência de dados inválidos
-            if (!(am.getNome_Abrigo().matches("[A-Za-z - ã - ãá - áâ - âó - óô - ôó - óí - íú - úç - ç]+")) || am.getNome_Abrigo().isBlank() || am.getNome_Abrigo().isEmpty()){
+            if (!(am.getNome_Abrigo().matches("[A-Za-zã-ãá-áâ-âó-óô-ôó-óí-íú-úç-çé-é - ]+")) || am.getNome_Abrigo().isBlank() || am.getNome_Abrigo().isEmpty()){
                 throw new IllegalArgumentException("Nome do abrigo inválido.");
             }
-            if (!(am.getNome_Dono().matches("[A-Za-z - ã - ãá - áâ - âó - óô - ôó - óí - íú - úç - ç]+")) || am.getNome_Dono().isBlank()){
+            if (!(am.getNome_Dono().matches("[A-Za-zã-ãá-áâ-âó-óô-ôó-óí-íú-úç-çé-é - ]+")) || am.getNome_Dono().isBlank()){
                 throw new IllegalArgumentException("Nome do dono inválido.");
             }
             if ("".equals(am.getEstado())){
@@ -56,7 +56,7 @@ public class AbrigoDao implements InterfaceDao{
             if ("".equals(am.getCidade())){
                 throw new IllegalArgumentException("Insira o valor de CIDADE.");
             }
-            if (!(am.getEndereco().matches("[A-Za-z - ã - ãá - áâ - âó - óô - ôó - óí - íú - úç - ç, - ,]+")) || am.getEndereco().isBlank()){
+            if (!(am.getEndereco().matches("[A-Za-zã-ãá-áâ-âó-óô-ôó-óí-íú-úç-çé-é,-,0-9--- - ]+")) || am.getEndereco().isBlank()){
                 throw new IllegalArgumentException("Endereço inválido.");
             }
             if (!(am.getCEP().matches("[0-9---]+")) || am.getCEP().isBlank()){

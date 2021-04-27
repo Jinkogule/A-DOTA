@@ -9,9 +9,18 @@ public class AnimaisModelo {
     private int Idade;
     private String Porte;
     private String Cor;
+    private String Abrigo;
 
     public String getCor() {
         return Cor;
+    }
+
+    public String getAbrigo() {
+        return Abrigo;
+    }
+
+    public void setAbrigo(String Abrigo) {
+        this.Abrigo = Abrigo;
     }
 
     public void setCor(String Cor) {

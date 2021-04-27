@@ -24,7 +24,7 @@ public class AnimaisDao implements InterfaceDao{
         String Cor = padronizaString(am.getCor());
         //inclui novo se for inclusão ou altera se for alteração
         if (am.getId() == 0){
-            sql = "INSERT INTO animais (Nome_Animal, Tipo, Raca, Idade, Porte, Cor) VALUES (?, ?, ?, ?, ?, ?)";
+            sql = "INSERT INTO animais (Nome_Animal, Tipo, Raca, Idade, Porte, Cor, Abrigo) VALUES (?, ?, ?, ?, ?, ?, ?)";
         }
         else{
             sql = "UPDATE animais SET nome=Nome_Abrigo WHERE Id=?";
@@ -39,18 +39,19 @@ public class AnimaisDao implements InterfaceDao{
             stm.setInt(4, am.getIdade());
             stm.setString(5, am.getPorte());
             stm.setString(6, Cor);
+            stm.setString(7, am.getAbrigo());
             if (am.getId()>0){
                 stm.setInt(2, am.getId());
             }
             
             //Tratando ocorrência de dados inválidos
-            if (!(am.getNome_Animal().matches("[A-Za-z - ã-ãá-áâ-âó-óô-ôó-óí-íú-úç-çü-ü]+")) || am.getNome_Animal().isBlank()){
+            if (!(am.getNome_Animal().matches("[A-Za-zã-ãá-áâ-âó-óô-ôó-óí-íú-úç-çé-éü-ü - ]+")) || am.getNome_Animal().isBlank()){
                 throw new IllegalArgumentException("Nome inválido.");
             }
             if ("".equals(am.getTipo())){
                 throw new IllegalArgumentException("Insira o valor de TIPO.");
             }
-            if (!(am.getRaca().matches("[A-Za-z - ã - ãá - áâ - âó - óô - ôó - óí - íú - úç - ç]+")) || am.getNome_Animal().isBlank()){
+            if (!(am.getRaca().matches("[A-Za-zã-ãá-áâ-âó-óô-ôó-óí-íú-úç-çü-üé-é--- - ]+")) || am.getNome_Animal().isBlank()){
                 throw new IllegalArgumentException("Raça inválida.");
             }
             if (am.getIdade() < 0){

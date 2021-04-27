@@ -29,6 +29,7 @@ public class AnimaisControle implements InterfaceControle{
         }
         am.setPorte((String)valor[5]);
         am.setCor((String)valor[6]);
+        am.setAbrigo((String)valor[7]);
         
         //Enviar informações para o DAO
         ad.salvarDao(am);

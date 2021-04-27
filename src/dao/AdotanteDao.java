@@ -42,11 +42,11 @@ public class AdotanteDao implements InterfaceDao{
             }
             
             //Tratando ocorrência de dados inválidos
-            if (!(am.getNomeAdotante().matches("[A-Za-z - ã - ãá - áâ - âó - óô - ôó - óí - íú - úç - çü - ü]+")) || am.getNomeAdotante().isBlank()){
+            if (!(am.getNomeAdotante().matches("[A-Za-zã-ãá-áâ-âó-óô-ôó-óí-íú-úç-çé-é - ]+")) || am.getNomeAdotante().isBlank()){
                 throw new IllegalArgumentException("Nome inválido.");
             }
 
-            if (!(am.getEnderecoAdotante().matches("[A-Za-z - ã - ãá - áâ - âó - óô - ôó - óí - íú - úç - ç]+")) || am.getEnderecoAdotante().isBlank()){
+            if (!(am.getEnderecoAdotante().matches("[A-Za-zã-ãá-áâ-âó-óô-ôó-óí-íú-úç-çé-é,-,0-9--- - ]+")) || am.getEnderecoAdotante().isBlank()){
                 throw new IllegalArgumentException("Endereço inválido.");
             }
             if (am.getIdadeAdotante() < 0){
