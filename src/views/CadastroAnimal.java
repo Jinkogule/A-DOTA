@@ -2,14 +2,18 @@ package views;
 
 import controle.AnimaisControle;
 import dao.ConnectDB;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
+import javax.swing.table.DefaultTableModel;
 
 public class CadastroAnimal extends FormPadrao{
     ConnectDB conexao = new ConnectDB();
-    
+
     JLabel jlTipo;
     JComboBox jcbTipo;
     
@@ -28,11 +32,13 @@ public class CadastroAnimal extends FormPadrao{
     JLabel jlAbrigo;
     JComboBox jcbAbrigo;
     
-    public CadastroAnimal(){
+    public CadastroAnimal() throws IOException{
         setTitle("Cadastro de Animal");
         preencheAbrigo();
+        preenchePorte("src/arquivos/porte.txt");
+        preencheTipo("src/arquivos/tipo.txt");
     }
-
+    
     @Override
     public void iniciarComponentes() {
         //Componentes de "Tipo do animal"
@@ -43,9 +49,6 @@ public class CadastroAnimal extends FormPadrao{
         jcbTipo = new JComboBox();
         jcbTipo.setBounds(300, 160, 150, 25);
         jPanel2.add(jcbTipo);
-        jcbTipo.addItem("");
-        jcbTipo.addItem("Gato");
-        jcbTipo.addItem("Cachorro");
         
         //Componentes de "Raça do animal"
         jlRaca = new JLabel("Raça");
@@ -73,11 +76,7 @@ public class CadastroAnimal extends FormPadrao{
         jcbPorte = new JComboBox();
         jcbPorte.setBounds(300, 100, 150, 25);
         jPanel2.add(jcbPorte);
-        jcbPorte.addItem("");
-        jcbPorte.addItem("Pequeno");
-        jcbPorte.addItem("Médio");
-        jcbPorte.addItem("Grande");
-        
+       
         //Componentes de "Cor do animal"
         jlCor = new JLabel("Cor");
         jlCor.setBounds(10, 140, 200, 25);
@@ -107,7 +106,7 @@ public class CadastroAnimal extends FormPadrao{
         controle.salvarControle(jtfId.getText(), jtfNome.getText(), jcbTipo.getSelectedItem(), jtfRaca.getText(), jtfIdade.getText(), jcbPorte.getSelectedItem(), jtfCor.getText(), jcbAbrigo.getSelectedItem());
     }
     
-    //preenche JComboBox Abrigo
+    //preenche JComboBox Abrigo com informações armazenadas no banco de dados
     public void preencheAbrigo(){
         conexao.abreConexao();
         conexao.executaSQL("select Nome_Abrigo from abrigo order by Nome_Abrigo");
@@ -122,6 +121,34 @@ public class CadastroAnimal extends FormPadrao{
             JOptionPane.showMessageDialog(null, "Erro ao preencher Abrigos."+e);
         }
         conexao.desconecta();
+    }
+
+    
+        //preenche o JComboBoxTipo com as informações armazenadas em um ARQUIVO
+    public void preencheTipo(String path) throws IOException {
+        BufferedReader buffRead = new BufferedReader(new FileReader(path));
+        String linha = "";
+        while (true) {
+            if (linha != null) {
+                jcbTipo.addItem(linha);
+            } else
+                break;
+            linha = buffRead.readLine();
+        }
+        buffRead.close();
+    }
+    //preenche o JComboBoxPorte com as informações armazenadas em um ARQUIVO
+    public void preenchePorte(String path) throws IOException {
+        BufferedReader buffRead = new BufferedReader(new FileReader(path));
+        String linha = "";
+        while (true) {
+            if (linha != null) {
+                jcbPorte.addItem(linha);
+            } else
+                break;
+            linha = buffRead.readLine();
+        }
+        buffRead.close();
     }
 
     @Override
@@ -144,5 +171,16 @@ public class CadastroAnimal extends FormPadrao{
         jcbPorte.setSelectedIndex(0);
         jtfCor.setText("");
         jcbAbrigo.setSelectedIndex(0);
+    }
+
+    @Override
+    public void criarTabela() {
+        tabela = tabelaconsulta.criarTabela(
+                jpnConsulta,
+                new Object[] {30, 80, 80, 200, 60, 100, 100},
+                new Object[] {"centro","esquerda","esquerda","esquerda","esquerda","esquerda","esquerda"},
+                new Object[] {"ID","Nome","Tipo", "Raça","Idade","Porte","Cor","Abrigo"}
+        );
+        modelo = (DefaultTableModel) tabela.getModel();
     }
 }

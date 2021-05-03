@@ -1,9 +1,12 @@
 package views;
 
-import dao.ConnectDB;
+
 import javax.swing.JFrame;
 import java.awt.Image;
 import java.awt.Graphics;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 
 public class Principal extends javax.swing.JFrame {
@@ -44,6 +47,8 @@ public class Principal extends javax.swing.JFrame {
         jmiCadastroAdotante = new javax.swing.JMenuItem();
         jmCadastroSeparador2 = new javax.swing.JPopupMenu.Separator();
         jmiCadastroAnimal = new javax.swing.JMenuItem();
+        jmSeparador1 = new javax.swing.JPopupMenu.Separator();
+        jmiAdotar = new javax.swing.JMenuItem();
         jmSobre = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -119,7 +124,7 @@ public class Principal extends javax.swing.JFrame {
         jmArquivo.add(jmSeparador);
 
         jmCadastro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/cadastroJm.png"))); // NOI18N
-        jmCadastro.setText("Cadastros");
+        jmCadastro.setText("Cadastrar");
 
         jmiCadastroAbrigo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/cadastroAbrigo.png"))); // NOI18N
         jmiCadastroAbrigo.setText("Abrigo");
@@ -151,6 +156,16 @@ public class Principal extends javax.swing.JFrame {
         jmCadastro.add(jmiCadastroAnimal);
 
         jmArquivo.add(jmCadastro);
+        jmArquivo.add(jmSeparador1);
+
+        jmiAdotar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/cadastroAnimais.png"))); // NOI18N
+        jmiAdotar.setText("Adotar");
+        jmiAdotar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmiAdotarActionPerformed(evt);
+            }
+        });
+        jmArquivo.add(jmiAdotar);
 
         jmbBarraMenu.add(jmArquivo);
 
@@ -166,9 +181,13 @@ public class Principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jmiCadastroAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiCadastroAnimalActionPerformed
-        CadastroAnimal tela = new CadastroAnimal(); 
-        jDesktopPane1.add(tela);
-        tela.setVisible(true);
+        try {
+            CadastroAnimal tela = new CadastroAnimal();
+            jDesktopPane1.add(tela);
+            tela.setVisible(true);
+        } catch (IOException ex) {
+            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jmiCadastroAnimalActionPerformed
 
     private void jmiListarAnimaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiListarAnimaisActionPerformed
@@ -180,9 +199,13 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jmiListarAdotanteActionPerformed
 
     private void jmiCadastroAbrigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiCadastroAbrigoActionPerformed
-        CadastroAbrigo tela = new CadastroAbrigo(); 
-        jDesktopPane1.add(tela);
-        tela.setVisible(true);
+        try {
+            CadastroAbrigo tela = new CadastroAbrigo();
+            jDesktopPane1.add(tela);
+            tela.setVisible(true);
+        } catch (IOException ex) {
+            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jmiCadastroAbrigoActionPerformed
 
     private void jmiCadastroAdotanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiCadastroAdotanteActionPerformed
@@ -190,6 +213,10 @@ public class Principal extends javax.swing.JFrame {
         jDesktopPane1.add(tela);
         tela.setVisible(true);
     }//GEN-LAST:event_jmiCadastroAdotanteActionPerformed
+
+    private void jmiAdotarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiAdotarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jmiAdotarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -238,8 +265,10 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPopupMenu.Separator jmListarSeparador2;
     private javax.swing.JPopupMenu.Separator jmListarSeparador3;
     private javax.swing.JPopupMenu.Separator jmSeparador;
+    private javax.swing.JPopupMenu.Separator jmSeparador1;
     private javax.swing.JMenu jmSobre;
     private javax.swing.JMenuBar jmbBarraMenu;
+    private javax.swing.JMenuItem jmiAdotar;
     private javax.swing.JMenuItem jmiCadastroAbrigo;
     private javax.swing.JMenuItem jmiCadastroAdotante;
     private javax.swing.JMenuItem jmiCadastroAnimal;

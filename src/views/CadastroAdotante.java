@@ -1,9 +1,9 @@
 package views;
 
 import controle.AdotanteControle;
-import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -92,5 +92,16 @@ public class CadastroAdotante extends FormPadrao{
         jtfCEP.setText("");
         jtfEnderecoAdotante.setText("");
         jtfIdadeAdotante.setText("");
+    }
+
+    @Override
+    public void criarTabela() {
+        tabela = tabelaconsulta.criarTabela(
+                jpnConsulta,
+                new Object[] {30, 80, 80, 200, 60},
+                new Object[] {"centro","esquerda","esquerda","esquerda","esquerda"},
+                new Object[] {"ID","Nome","Idade", "Endereço","CEP","Telefone"}
+        );
+        modelo = (DefaultTableModel) tabela.getModel();
     }
 }

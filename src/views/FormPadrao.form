@@ -227,6 +227,9 @@
           <Color blue="d4" green="8c" red="0" type="rgb"/>
         </Property>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
 
       <Layout>
         <DimensionLayout dim="0">

@@ -74,7 +74,7 @@
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/img/cadastroJm.png"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Cadastros"/>
+                <Property name="text" type="java.lang.String" value="Cadastrar"/>
               </Properties>
               <SubComponents>
                 <MenuItem class="javax.swing.JMenuItem" name="jmiCadastroAbrigo">
@@ -116,6 +116,19 @@
                 </MenuItem>
               </SubComponents>
             </Menu>
+            <MenuItem class="javax.swing.JPopupMenu$Separator" name="jmSeparador1">
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="jmiAdotar">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/img/cadastroAnimais.png"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Adotar"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jmiAdotarActionPerformed"/>
+              </Events>
+            </MenuItem>
           </SubComponents>
         </Menu>
         <Menu class="javax.swing.JMenu" name="jmSobre">

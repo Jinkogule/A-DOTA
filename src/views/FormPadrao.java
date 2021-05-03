@@ -3,16 +3,21 @@ package views;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import javax.swing.JLabel;
+import javax.swing.JTable;
 import javax.swing.JTextField;
+import javax.swing.table.DefaultTableModel;
+import util.Tabela;
 
 abstract public class FormPadrao extends javax.swing.JInternalFrame {
     
     JLabel jlConsulta;
     JTextField jtfConsulta;
+    Tabela tabelaconsulta = new Tabela();
     
     public FormPadrao() {
         initComponents();
         iniciarComponentes();
+        criarTabela();
         
         jbSalvar.setEnabled(false);
         jbLimpar.setEnabled(false);
@@ -21,7 +26,7 @@ abstract public class FormPadrao extends javax.swing.JInternalFrame {
         
         // JTextField para Consulta
         jtfConsulta = new JTextField();
-        jtfConsulta.setBounds(10, 5, 595, 25);
+        jtfConsulta.setBounds(10, 5, 600, 25);
         jpnConsulta.add(jtfConsulta);
         
         //Centraliza o formulário
@@ -214,8 +219,7 @@ abstract public class FormPadrao extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jbFecharActionPerformed
 
     private void jbLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLimparActionPerformed
-        habilitaBotoes(true);
-        habilitaCampos(false);
+        limpaCampo();
     }//GEN-LAST:event_jbLimparActionPerformed
 
     private void jbSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSalvarActionPerformed
@@ -248,6 +252,11 @@ abstract public class FormPadrao extends javax.swing.JInternalFrame {
     //Métodos abstratos
     abstract public void iniciarComponentes();
     abstract public void salvar();
+    abstract public void criarTabela();
+    
+    //Atributos para criação da tabela
+    JTable tabela;
+    DefaultTableModel modelo = new DefaultTableModel();
     
     //Metodo para habilitar e desabilitar botões do formulário
     public void habilitaBotoes(boolean estado){
@@ -293,7 +302,7 @@ abstract public class FormPadrao extends javax.swing.JInternalFrame {
     private javax.swing.JButton jbLimpar;
     private javax.swing.JButton jbNovo;
     private javax.swing.JButton jbSalvar;
-    private javax.swing.JPanel jpnConsulta;
+    public javax.swing.JPanel jpnConsulta;
     public javax.swing.JTextField jtfId;
     public javax.swing.JTextField jtfNome;
     // End of variables declaration//GEN-END:variables

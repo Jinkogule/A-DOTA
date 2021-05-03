@@ -36,7 +36,6 @@ public class ConnectDB {
     public void desconecta(){
         try {
             con.close();
-            JOptionPane.showMessageDialog(null, "BD desconectado com sucesso.");
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Falha ao encerrar conexão com o banco de dados: "+e);
         }       

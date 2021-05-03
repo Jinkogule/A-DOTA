@@ -2,13 +2,16 @@ package views;
 
 import controle.AbrigoControle;
 import dao.ConnectDB;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JTextField;
+import javax.swing.table.DefaultTableModel;
 
 public class CadastroAbrigo extends FormPadrao{
-    ConnectDB teste = new ConnectDB();
+    ConnectDB conexao = new ConnectDB();
     
     JLabel jlDonoDoAbrigo;
     JTextField jtfDonoDoAbrigo;
@@ -25,10 +28,10 @@ public class CadastroAbrigo extends FormPadrao{
     JLabel jlCEP;
     JTextField jtfCEP;
     
-    public CadastroAbrigo(){
+    public CadastroAbrigo() throws IOException{
         setTitle("Cadastro de Abrigo");
-        preencheEstado();
-        preencheCidade();
+        preencheEstado("src/arquivos/estados.txt");
+        preencheCidade("src/arquivos/cidades.txt");
     }
 
     @Override
@@ -98,35 +101,33 @@ public class CadastroAbrigo extends FormPadrao{
         jtfCEP.setEnabled(estado);
         jtfEndereco.setEnabled(estado);
     }
-    //preenche JComboBox Estado
-    public void preencheEstado(){
-        teste.abreConexao();
-        teste.executaSQL("select nome from estados");
-        try{
-            teste.rs.first();
-            do{
-                jcbEstado.addItem(teste.rs.getString("nome"));
-            }
-            while(teste.rs.next());
+   
+    //preenche o JComboBoxEstado com as informações armazenadas em um ARQUIVO
+    public void preencheEstado(String path) throws IOException {
+        BufferedReader buffRead = new BufferedReader(new FileReader(path));
+        String linha = "";
+        while (true) {
+            if (linha != null) {
+                jcbEstado.addItem(linha);
+            } else
+                break;
+            linha = buffRead.readLine();
         }
-        catch(Exception e){
-            JOptionPane.showMessageDialog(null, "Erro ao preencher Estados."+e);
-        }
+        buffRead.close();
     }
-    //preenche JComboBox Cidade
-    public void preencheCidade(){
-        teste.abreConexao();
-        teste.executaSQL("select nome from cidades order by nome");
-        try{
-            teste.rs.first();
-            do{
-                jcbCidade.addItem(teste.rs.getString("nome"));
-            }
-            while(teste.rs.next());
+    
+    //preenche o JComboBoxCidade com as informações armazenadas em um ARQUIVO
+    public void preencheCidade(String path) throws IOException {
+        BufferedReader buffRead = new BufferedReader(new FileReader(path));
+        String linha = "";
+        while (true) {
+            if (linha != null) {
+                jcbCidade.addItem(linha);
+            } else
+                break;
+            linha = buffRead.readLine();
         }
-        catch(Exception e){
-            JOptionPane.showMessageDialog(null, "Erro ao preencher Cidades."+e);
-        }
+        buffRead.close();
     }
         
     @Override
@@ -137,5 +138,16 @@ public class CadastroAbrigo extends FormPadrao{
         jtfDonoDoAbrigo.setText("");
         jtfCEP.setText("");
         jtfEndereco.setText("");
+    }
+
+    @Override
+    public void criarTabela() {
+        tabela = tabelaconsulta.criarTabela(
+                jpnConsulta,
+                new Object[] {30, 80, 80, 200, 60, 100, 100},
+                new Object[] {"centro","esquerda","esquerda","esquerda","esquerda","esquerda","esquerda"},
+                new Object[] {"ID","Nome","Dono", "Endereço","CEP","Estado","Cidade"}
+        );
+        modelo = (DefaultTableModel) tabela.getModel();
     }
 }
