@@ -4,6 +4,7 @@ package views;
 import javax.swing.JFrame;
 import java.awt.Image;
 import java.awt.Graphics;
+import java.awt.Toolkit;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -13,6 +14,7 @@ public class Principal extends javax.swing.JFrame {
 
     public Principal() {
         initComponents();
+        setIcon();
         setExtendedState(JFrame.MAXIMIZED_BOTH);
     }
 
@@ -252,7 +254,9 @@ public class Principal extends javax.swing.JFrame {
             }
         });
     }
-
+    public void setIcon() {
+       setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("osso.png")));
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLabel2;
@@ -277,4 +281,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jmiListarAnimais;
     private javax.swing.JMenuItem jmiListarAnimaisAdotados;
     // End of variables declaration//GEN-END:variables
+
+   
 }
