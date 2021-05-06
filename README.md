@@ -19,4 +19,4 @@ Arquivos;
 Tratamento de Exceções;
 Coleções, Threads;
 
-Obs: a funcionalidade principal do software funciona em cima de um banco de dados local do usuário, cujo SQL que contém os dados desse banco está no repositório com o nome "A-DOTA.sql". Além disso, também é necessário que o usuário inclua no projeto um driver JDBC para o SGBD MySQL, e, caso existam problemas com sua conexão, alterar os dados que compõem a efetuação dessa conexão nos atributos da classe "ConnectDB", localizada em "src/dao/ConnectDB.java"
+Obs: a funcionalidade principal do software funciona em cima de um banco de dados local do usuário, cujo SQL que contém os dados desse banco está no repositório com o nome "A-DOTA.sql". Além disso, também é necessário que o usuário inclua no projeto um driver JDBC para o SGBD MySQL, e, caso existam problemas com sua conexão, alterar os dados que compõem a efetuação dessa conexão nos atributos da classe "ConnectDB", localizada em "src/dao/ConnectDB.java".
