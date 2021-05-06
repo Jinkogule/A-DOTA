@@ -3,7 +3,6 @@ package views;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import javax.swing.JTable;
-import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 import util.Tabela;
 

@@ -3,8 +3,6 @@ package dao;
 import interfaces.InterfaceDao;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
-import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import modelo.AdotanteModelo;
@@ -24,14 +22,9 @@ public class AdotanteDao implements InterfaceDao{
         String NomeAdotante = padronizaString(am.getNomeAdotante());
         String EnderecoAdotante = padronizaString(am.getEnderecoAdotante());
         String TelefoneAdotante = padronizaString(am.getTelefoneAdotante());
-        //inclui novo se for inclusão ou altera se for alteração
-        if (am.getId() == 0){
-            sql = "INSERT INTO adotante (Nome, Idade, Endereco, Telefone, CEP) VALUES (?, ?, ?, ?, ?)";
-        }
-        else{
-            sql = "UPDATE adotante SET nome=NomeAdotante WHERE Id=?";
-        }
-
+ 
+        sql = "INSERT INTO adotante (Nome, Idade, Endereco, Telefone, CEP) VALUES (?, ?, ?, ?, ?)";
+     
         try{
             conexao.abreConexao();
             stm = conexao.con.prepareStatement(sql);
@@ -85,20 +78,19 @@ public class AdotanteDao implements InterfaceDao{
             
             while (rs.next()){
                 tabela.addRow(
-                new Object[] {
-                    rs.getInt("Id"),
-                    rs.getString("Nome"),
-                    rs.getInt("Idade"),
-                    rs.getString("Endereco"),
-                    rs.getString("Telefone"),
-                    rs.getString("CEP"),                       
-                }
+                    new Object[] {
+                        rs.getInt("Id"),
+                        rs.getString("Nome"),
+                        rs.getInt("Idade"),
+                        rs.getString("Endereco"),
+                        rs.getString("CEP"),
+                        rs.getString("Telefone"),                       
+                    }
                 );
             }
         }
         catch (Exception e){
-          
-        }
-        
+            JOptionPane.showMessageDialog(null, "Erro: "+e);
+        }      
     }
 }

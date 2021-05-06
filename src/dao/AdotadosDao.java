@@ -18,7 +18,6 @@ public class AdotadosDao implements InterfaceDao{
     public void salvarDao(Object... valor) {
         AdotadosModelo am = (AdotadosModelo) valor[0];
        
-        //inclui novo se for inclusão ou altera se for alteração
         sql = "INSERT INTO adotados (Nome_Adotante, Nome_Animal) VALUES (?, ?)";
              
         sql2 = "DELETE FROM animais WHERE animais.Nome_Animal = (?)";
@@ -65,17 +64,16 @@ public class AdotadosDao implements InterfaceDao{
             
             while (rs.next()){
                 tabela.addRow(
-                new Object[] {
-                    rs.getInt("Id"),
-                    rs.getString("Nome_Animal"),
-                    rs.getString("Nome_Adotante"),                      
-                }
+                    new Object[] {
+                        rs.getInt("Id"),
+                        rs.getString("Nome_Animal"),
+                        rs.getString("Nome_Adotante"),                      
+                    }
                 );
             }
         }
         catch (Exception e){
-          
-        }
-        
+            JOptionPane.showMessageDialog(null, "Erro: "+e);
+        }      
     }
 }

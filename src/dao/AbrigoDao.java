@@ -3,8 +3,6 @@ package dao;
 import interfaces.InterfaceDao;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
-import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import modelo.AbrigoModelo;
@@ -25,13 +23,8 @@ public class AbrigoDao implements InterfaceDao{
         String Nome_Abrigo = padronizaString(am.getNome_Abrigo());
         String Nome_Dono = padronizaString(am.getNome_Dono());
         String Endereco = padronizaString(am.getEndereco());
-        //inclui novo se for inclusão ou altera se for alteração
-        if (am.getId() == 0){
-            sql = "INSERT INTO abrigo (Nome_Abrigo, Nome_Dono, Estado, Cidade, Endereco, CEP) VALUES (?, ?, ?, ?, ?, ?)";
-        }
-        else{
-            sql = "UPDATE abrigo SET nome=Nome_Abrigo WHERE Id=?";
-        }
+
+        sql = "INSERT INTO abrigo (Nome_Abrigo, Nome_Dono, Estado, Cidade, Endereco, CEP) VALUES (?, ?, ?, ?, ?, ?)";
         
         try{
             conexao.abreConexao();
@@ -86,22 +79,20 @@ public class AbrigoDao implements InterfaceDao{
             
             while (rs.next()){
                 tabela.addRow(
-                new Object[] {
-                    rs.getInt("Id"),
-                    rs.getString("Nome_Dono"),
-                    rs.getString("Nome_Abrigo"),
-                    rs.getString("Endereco"),
-                    rs.getString("CEP"),
-                    rs.getString("Estado"),
-                    rs.getString("Cidade")
-                        
-                }
+                    new Object[] {
+                        rs.getInt("Id"),
+                        rs.getString("Nome_Abrigo"),
+                        rs.getString("Nome_Dono"),
+                        rs.getString("Endereco"),
+                        rs.getString("CEP"),
+                        rs.getString("Estado"),
+                        rs.getString("Cidade")                        
+                    }
                 );
             }
         }
         catch (Exception e){
-          
-        }
-        
+            JOptionPane.showMessageDialog(null, "Erro: "+e);
+        }    
     }
 }

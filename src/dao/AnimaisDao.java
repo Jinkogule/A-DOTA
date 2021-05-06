@@ -3,8 +3,6 @@ package dao;
 import interfaces.InterfaceDao;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
-import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import modelo.AnimaisModelo;
@@ -26,12 +24,8 @@ public class AnimaisDao implements InterfaceDao{
         String Raca = padronizaString(am.getRaca());
         String Cor = padronizaString(am.getCor());
         //inclui novo se for inclusão ou altera se for alteração
-        if (am.getId() == 0){
-            sql = "INSERT INTO animais (Nome_Animal, Tipo, Raca, Idade, Porte, Cor, Abrigo) VALUES (?, ?, ?, ?, ?, ?, ?)";
-        }
-        else{
-            sql = "UPDATE animais SET nome=Nome_Abrigo WHERE Id=?";
-        }
+        
+        sql = "INSERT INTO animais (Nome_Animal, Tipo, Raca, Idade, Porte, Cor, Abrigo) VALUES (?, ?, ?, ?, ?, ?, ?)";
 
         try{
             conexao.abreConexao();
