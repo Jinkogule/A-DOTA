@@ -1,14 +1,22 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package views;
 
-/**
- *
- * @author lucas
- */
-public class ListaAbrigos {
+import javax.swing.table.DefaultTableModel;
+
+public class ListaAbrigos extends FormListagem{
     
+    public ListaAbrigos(){
+        setTitle("Lista de Abrigos");
+    }
+
+    @Override
+    public void criarTabela() {
+        tabela = tabelaconsulta.criarTabela(
+                2,105,632,393, //posição e tamanho da tabela
+                jpnConsultaL,
+                new Object[] {30, 80, 80, 200, 60, 100, 100}, //tamanho das colunas
+                new Object[] {"centro","esquerda","esquerda","esquerda","esquerda","esquerda","esquerda"},
+                new Object[] {"ID","Nome","Dono", "Endereço","CEP","Estado","Cidade"}
+        );
+        modelo = (DefaultTableModel) tabela.getModel();
+    }
 }

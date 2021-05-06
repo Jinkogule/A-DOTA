@@ -1,7 +1,6 @@
 package modelo;
 
 public class AnimaisModelo {
-    //Variáveis tem que ser de tipo igual ao tipo delas no BD
     private int Id;
     private String Nome_Animal;
     private String Tipo;

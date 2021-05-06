@@ -9,10 +9,9 @@ import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
-import javax.swing.table.DefaultTableModel;
 
 public class CadastroAnimal extends FormPadrao{
-    ConnectDB conexao = new ConnectDB();
+    static ConnectDB conexao = new ConnectDB(); //static para poder ser referenciada na função estática "preencheAbrigo"
 
     JLabel jlTipo;
     JComboBox jcbTipo;
@@ -30,7 +29,7 @@ public class CadastroAnimal extends FormPadrao{
     JTextField jtfCor;
     
     JLabel jlAbrigo;
-    JComboBox jcbAbrigo;
+    static JComboBox jcbAbrigo; //static para poder ser referenciada na função estática "preencheAbrigo"
     
     public CadastroAnimal() throws IOException{
         setTitle("Cadastro de Animal");
@@ -94,61 +93,22 @@ public class CadastroAnimal extends FormPadrao{
         jcbAbrigo = new JComboBox();
         jcbAbrigo.setBounds(475, 100, 133, 25);
         jPanel2.add(jcbAbrigo);
-        jcbAbrigo.addItem("");
-
-        
+        jcbAbrigo.addItem("");       
     }
     
     AnimaisControle controle = new AnimaisControle();
 
     @Override
     public void salvar() {
-        controle.salvarControle(jtfId.getText(), jtfNome.getText(), jcbTipo.getSelectedItem(), jtfRaca.getText(), jtfIdade.getText(), jcbPorte.getSelectedItem(), jtfCor.getText(), jcbAbrigo.getSelectedItem());
-    }
-    
-    //preenche JComboBox Abrigo com informações armazenadas no banco de dados
-    public void preencheAbrigo(){
-        conexao.abreConexao();
-        conexao.executaSQL("select Nome_Abrigo from abrigo order by Nome_Abrigo");
-        try{
-            conexao.rs.first();
-            do{
-                jcbAbrigo.addItem(conexao.rs.getString("Nome_Abrigo"));
-            }
-            while(conexao.rs.next());
-        }
-        catch(Exception e){
-            JOptionPane.showMessageDialog(null, "Erro ao preencher Abrigos."+e);
-        }
-        conexao.desconecta();
-    }
-
-    
-        //preenche o JComboBoxTipo com as informações armazenadas em um ARQUIVO
-    public void preencheTipo(String path) throws IOException {
-        BufferedReader buffRead = new BufferedReader(new FileReader(path));
-        String linha = "";
-        while (true) {
-            if (linha != null) {
-                jcbTipo.addItem(linha);
-            } else
-                break;
-            linha = buffRead.readLine();
-        }
-        buffRead.close();
-    }
-    //preenche o JComboBoxPorte com as informações armazenadas em um ARQUIVO
-    public void preenchePorte(String path) throws IOException {
-        BufferedReader buffRead = new BufferedReader(new FileReader(path));
-        String linha = "";
-        while (true) {
-            if (linha != null) {
-                jcbPorte.addItem(linha);
-            } else
-                break;
-            linha = buffRead.readLine();
-        }
-        buffRead.close();
+        controle.salvarControle(
+                jtfId.getText(),
+                jtfNome.getText(),
+                jcbTipo.getSelectedItem(),
+                jtfRaca.getText(),
+                jtfIdade.getText(),
+                jcbPorte.getSelectedItem(),
+                jtfCor.getText(),
+                jcbAbrigo.getSelectedItem());
     }
 
     @Override
@@ -172,15 +132,49 @@ public class CadastroAnimal extends FormPadrao{
         jtfCor.setText("");
         jcbAbrigo.setSelectedIndex(0);
     }
-
-    @Override
-    public void criarTabela() {
-        tabela = tabelaconsulta.criarTabela(
-                jpnConsulta,
-                new Object[] {30, 80, 80, 200, 60, 100, 100},
-                new Object[] {"centro","esquerda","esquerda","esquerda","esquerda","esquerda","esquerda"},
-                new Object[] {"ID","Nome","Tipo", "Raça","Idade","Porte","Cor","Abrigo"}
-        );
-        modelo = (DefaultTableModel) tabela.getModel();
+    
+    //preenche JComboBoxAbrigo com informações armazenadas no banco de dados
+    public static void preencheAbrigo(){ //static para ser chamada ao click do botão "salvar", no "FormPadrao"
+        conexao.abreConexao();
+        conexao.executaSQL("select Nome_Abrigo from abrigo order by Nome_Abrigo");
+        try{
+            conexao.rs.first();
+            do{
+                jcbAbrigo.addItem(conexao.rs.getString("Nome_Abrigo"));
+            }
+            while(conexao.rs.next());
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Erro ao preencher Abrigos."+e);
+        }
+        conexao.desconecta();
+    }
+    
+    //preenche o JComboBoxTipo com as informações armazenadas em um ARQUIVO
+    public void preencheTipo(String path) throws IOException {
+        BufferedReader buffRead = new BufferedReader(new FileReader(path));
+        String linha = "";
+        while (true) {
+            if (linha != null) {
+                jcbTipo.addItem(linha);
+            } else
+                break;
+            linha = buffRead.readLine();
+        }
+        buffRead.close();
+    }
+    
+    //preenche o JComboBoxPorte com as informações armazenadas em um ARQUIVO
+    public void preenchePorte(String path) throws IOException {
+        BufferedReader buffRead = new BufferedReader(new FileReader(path));
+        String linha = "";
+        while (true) {
+            if (linha != null) {
+                jcbPorte.addItem(linha);
+            } else
+                break;
+            linha = buffRead.readLine();
+        }
+        buffRead.close();
     }
 }

@@ -41,6 +41,9 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Abrigos"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jmiListarAbrigoActionPerformed"/>
+                  </Events>
                 </MenuItem>
                 <MenuItem class="javax.swing.JPopupMenu$Separator" name="jmListarSeparador2">
                 </MenuItem>
@@ -64,6 +67,9 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Animais Adotados"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jmiListarAnimaisAdotadosActionPerformed"/>
+                  </Events>
                 </MenuItem>
               </SubComponents>
             </Menu>

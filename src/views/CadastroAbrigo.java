@@ -8,7 +8,6 @@ import java.io.IOException;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
-import javax.swing.table.DefaultTableModel;
 
 public class CadastroAbrigo extends FormPadrao{
     ConnectDB conexao = new ConnectDB();
@@ -53,7 +52,6 @@ public class CadastroAbrigo extends FormPadrao{
         jcbEstado = new JComboBox();
         jcbEstado.setBounds(220, 100, 150, 25);
         jPanel2.add(jcbEstado);
-        jcbEstado.addItem("");
         
         //Componentes de "cidade do abrigo"
         jlCidade = new JLabel("Cidade");
@@ -63,7 +61,6 @@ public class CadastroAbrigo extends FormPadrao{
         jcbCidade = new JComboBox();
         jcbCidade.setBounds(375, 100, 150, 25);
         jPanel2.add(jcbCidade);
-        jcbCidade.addItem("");
         
         //Componentes de "cep do abrigo"
         jlCEP = new JLabel("CEP");
@@ -89,7 +86,14 @@ public class CadastroAbrigo extends FormPadrao{
 
     @Override
     public void salvar() {
-        controle.salvarControle(jtfId.getText(), jtfNome.getText(), jtfDonoDoAbrigo.getText(), jcbEstado.getSelectedItem(), jcbCidade.getSelectedItem(), jtfEndereco.getText(), jtfCEP.getText());
+        controle.salvarControle(
+                jtfId.getText(),
+                jtfNome.getText(),
+                jtfDonoDoAbrigo.getText(),
+                jcbEstado.getSelectedItem(),
+                jcbCidade.getSelectedItem(),
+                jtfEndereco.getText(),
+                jtfCEP.getText());
     }
     
     @Override
@@ -101,7 +105,17 @@ public class CadastroAbrigo extends FormPadrao{
         jtfCEP.setEnabled(estado);
         jtfEndereco.setEnabled(estado);
     }
-   
+    
+    @Override
+    public void limpaCampo() {
+        jtfNome.setText("");
+        jcbEstado.setSelectedIndex(0);
+        jcbCidade.setSelectedIndex(0);
+        jtfDonoDoAbrigo.setText("");
+        jtfCEP.setText("");
+        jtfEndereco.setText("");
+    }
+    
     //preenche o JComboBoxEstado com as informações armazenadas em um ARQUIVO
     public void preencheEstado(String path) throws IOException {
         BufferedReader buffRead = new BufferedReader(new FileReader(path));
@@ -129,25 +143,5 @@ public class CadastroAbrigo extends FormPadrao{
         }
         buffRead.close();
     }
-        
-    @Override
-    public void limpaCampo() {
-        jtfNome.setText("");
-        jcbEstado.setSelectedIndex(0);
-        jcbCidade.setSelectedIndex(0);
-        jtfDonoDoAbrigo.setText("");
-        jtfCEP.setText("");
-        jtfEndereco.setText("");
-    }
-
-    @Override
-    public void criarTabela() {
-        tabela = tabelaconsulta.criarTabela(
-                jpnConsulta,
-                new Object[] {30, 80, 80, 200, 60, 100, 100},
-                new Object[] {"centro","esquerda","esquerda","esquerda","esquerda","esquerda","esquerda"},
-                new Object[] {"ID","Nome","Dono", "Endereço","CEP","Estado","Cidade"}
-        );
-        modelo = (DefaultTableModel) tabela.getModel();
-    }
+       
 }

@@ -70,19 +70,4 @@ public class AbrigoDao implements InterfaceDao{
             JOptionPane.showMessageDialog(null, "Erro: "+e);
         }
     }
-
-    @Override
-    public void excluirDao(int id) {
-        
-    }
-
-    @Override
-    public void consultarDao(Object... valor) throws SQLException {
-        
-    }
-
-    @Override
-    public void carregarComboBoxDao(JComboBox itens) throws SQLException {
-        
-    } 
 }

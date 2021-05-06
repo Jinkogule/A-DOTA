@@ -1,7 +1,6 @@
 package modelo;
 
 public class AdotanteModelo {
-    //Variáveis tem que ser de tipo igual ao tipo delas no BD
     private int Id;
     private String NomeAdotante;
     private int IdadeAdotante;
@@ -10,7 +9,6 @@ public class AdotanteModelo {
     private String TelefoneAdotante;
     private String CEP;
 
-    //ID
     public int getId() {
         return Id;
     }
@@ -19,7 +17,6 @@ public class AdotanteModelo {
         this.Id = Id;
     }
 
-    //Nome Adotante
     public String getNomeAdotante() {
         return NomeAdotante;
     }
@@ -27,14 +24,14 @@ public class AdotanteModelo {
     public void setNomeAdotante(String NomeAdotante) {
         this.NomeAdotante = NomeAdotante;
     }
-    //Idade Adotante
+
     public int getIdadeAdotante() {
         return IdadeAdotante;
     }
         public void setIdadeAdotante(int IdadeAdotante) {
         this.IdadeAdotante = IdadeAdotante;
     }
-    //Sexo Adotante
+   
     public String getSexoAdotante() {
         return SexoAdotante;
     }
@@ -43,7 +40,6 @@ public class AdotanteModelo {
         this.SexoAdotante = SexoAdotante;
     }
 
-    //Endereço Adotante
     public String getEnderecoAdotante() {
         return EnderecoAdotante;
     }
@@ -52,7 +48,6 @@ public class AdotanteModelo {
         this.EnderecoAdotante = EnderecoAdotante;
     }
 
-    //CEP Adotante
     public String getCEP() {
         return CEP;
     }
@@ -61,7 +56,6 @@ public class AdotanteModelo {
         this.CEP = CEP;
     }
 
-    //Telefone Adotante
     public String getTelefoneAdotante() {
         return TelefoneAdotante;
     }

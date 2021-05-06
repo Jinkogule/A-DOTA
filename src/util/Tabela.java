@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package util;
 
 import javax.swing.JPanel;
@@ -13,17 +8,13 @@ import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellRenderer;
 
-/**
- *
- * @author lucas
- */
 public class Tabela {
-    public JTable criarTabela(JPanel jpn, Object[] largura, Object[] posicao, Object[] coluna) throws NullPointerException{
+    public JTable criarTabela(int b1,int b2,int b3,int b4, JPanel jpn, Object[] largura, Object[] posicao, Object[] coluna) throws NullPointerException{
         JTable tabela = new JTable(new DefaultTableModel());
         
         tabela.setVisible(true);
         JScrollPane jsp = new JScrollPane(tabela);
-        jsp.setBounds(10,30,600,130);
+        jsp.setBounds(b1,b2,b3,b4);
         jsp.setVisible(true);
         jpn.add(jsp);
         DefaultTableModel modeloTabela = (DefaultTableModel) tabela.getModel();

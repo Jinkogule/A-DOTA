@@ -28,14 +28,4 @@ public class AbrigoControle implements InterfaceControle{
         //Enviar informações para o DAO
         ad.salvarDao(am);
     }
-
-    @Override
-    public void excluirControle(int id) {
-        
-    }
-
-    @Override
-    public void carregarComboBox() {
-        
-    }
 }

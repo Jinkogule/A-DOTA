@@ -3,12 +3,7 @@ package views;
 import controle.AdotanteControle;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
-import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author Gabriel
- */
 public class CadastroAdotante extends FormPadrao{
 
     JLabel jlIdadeAdotante;
@@ -23,7 +18,6 @@ public class CadastroAdotante extends FormPadrao{
     JLabel jlCEP;
     JTextField jtfCEP;
     
-
     public CadastroAdotante(){
         setTitle("Cadastro de Adotante");
     }
@@ -73,7 +67,13 @@ public class CadastroAdotante extends FormPadrao{
 
     @Override
     public void salvar() {
-        controle.salvarControle(jtfId.getText(), jtfNome.getText(), jtfIdadeAdotante.getText(), jtfEnderecoAdotante.getText(), jtfTelefoneAdotante.getText(), jtfCEP.getText());
+        controle.salvarControle(
+                jtfId.getText(),
+                jtfNome.getText(),
+                jtfIdadeAdotante.getText(),
+                jtfEnderecoAdotante.getText(),
+                jtfTelefoneAdotante.getText(),
+                jtfCEP.getText());
     }
 
     @Override
@@ -92,16 +92,5 @@ public class CadastroAdotante extends FormPadrao{
         jtfCEP.setText("");
         jtfEnderecoAdotante.setText("");
         jtfIdadeAdotante.setText("");
-    }
-
-    @Override
-    public void criarTabela() {
-        tabela = tabelaconsulta.criarTabela(
-                jpnConsulta,
-                new Object[] {30, 80, 80, 200, 60},
-                new Object[] {"centro","esquerda","esquerda","esquerda","esquerda"},
-                new Object[] {"ID","Nome","Idade", "Endereço","CEP","Telefone"}
-        );
-        modelo = (DefaultTableModel) tabela.getModel();
     }
 }

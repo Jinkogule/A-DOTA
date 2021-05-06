@@ -1,21 +1,31 @@
 package views;
 
-
-import javax.swing.JFrame;
+import java.awt.Dimension;
 import java.awt.Image;
 import java.awt.Graphics;
 import java.awt.Toolkit;
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 public class Principal extends javax.swing.JFrame {
 
     public Principal() {
         initComponents();
         setIcon();
-        setExtendedState(JFrame.MAXIMIZED_BOTH);
+        redimensionaPainel();    
+    }
+    
+    //seleciona o ícone do projeto
+    public void setIcon() {
+       setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("osso.png")));
+    }
+    
+    //redimensiona o painel de acordo com o tamanho do monitor do usuário
+    public void redimensionaPainel(){
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        pack();
+        setSize(screenSize.width,screenSize.height);
     }
 
     @SuppressWarnings("unchecked")
@@ -105,6 +115,11 @@ public class Principal extends javax.swing.JFrame {
 
         jmiListarAbrigo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/listar.png"))); // NOI18N
         jmiListarAbrigo.setText("Abrigos");
+        jmiListarAbrigo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmiListarAbrigoActionPerformed(evt);
+            }
+        });
         jmListar.add(jmiListarAbrigo);
         jmListar.add(jmListarSeparador2);
 
@@ -120,6 +135,11 @@ public class Principal extends javax.swing.JFrame {
 
         jmiListarAnimaisAdotados.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/listarAnimaisAdotados.png"))); // NOI18N
         jmiListarAnimaisAdotados.setText("Animais Adotados");
+        jmiListarAnimaisAdotados.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmiListarAnimaisAdotadosActionPerformed(evt);
+            }
+        });
         jmListar.add(jmiListarAnimaisAdotados);
 
         jmArquivo.add(jmListar);
@@ -187,17 +207,22 @@ public class Principal extends javax.swing.JFrame {
             CadastroAnimal tela = new CadastroAnimal();
             jDesktopPane1.add(tela);
             tela.setVisible(true);
-        } catch (IOException ex) {
-            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        catch (IOException e) {
+            JOptionPane.showMessageDialog(null, "Erro: "+e);
         }
     }//GEN-LAST:event_jmiCadastroAnimalActionPerformed
 
     private void jmiListarAnimaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiListarAnimaisActionPerformed
-        // TODO add your handling code here:
+        ListaAnimais tela = new ListaAnimais();
+        jDesktopPane1.add(tela);
+        tela.setVisible(true);
     }//GEN-LAST:event_jmiListarAnimaisActionPerformed
 
     private void jmiListarAdotanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiListarAdotanteActionPerformed
-
+        ListaAdotantes tela = new ListaAdotantes();
+        jDesktopPane1.add(tela);
+        tela.setVisible(true);
     }//GEN-LAST:event_jmiListarAdotanteActionPerformed
 
     private void jmiCadastroAbrigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiCadastroAbrigoActionPerformed
@@ -205,8 +230,9 @@ public class Principal extends javax.swing.JFrame {
             CadastroAbrigo tela = new CadastroAbrigo();
             jDesktopPane1.add(tela);
             tela.setVisible(true);
-        } catch (IOException ex) {
-            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        catch (IOException e) {
+            JOptionPane.showMessageDialog(null, "Erro: "+e);
         }
     }//GEN-LAST:event_jmiCadastroAbrigoActionPerformed
 
@@ -217,10 +243,23 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jmiCadastroAdotanteActionPerformed
 
     private void jmiAdotarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiAdotarActionPerformed
-        // TODO add your handling code here:
+        FormAdocao tela = new FormAdocao(); 
+        jDesktopPane1.add(tela);
+        tela.setVisible(true);
     }//GEN-LAST:event_jmiAdotarActionPerformed
 
-    /**
+    private void jmiListarAbrigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiListarAbrigoActionPerformed
+        ListaAbrigos tela = new ListaAbrigos();
+        jDesktopPane1.add(tela);
+        tela.setVisible(true);
+    }//GEN-LAST:event_jmiListarAbrigoActionPerformed
+
+    private void jmiListarAnimaisAdotadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiListarAnimaisAdotadosActionPerformed
+        ListaAdotados tela = new ListaAdotados();
+        jDesktopPane1.add(tela);
+        tela.setVisible(true);
+    }//GEN-LAST:event_jmiListarAnimaisAdotadosActionPerformed
+     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
@@ -254,9 +293,7 @@ public class Principal extends javax.swing.JFrame {
             }
         });
     }
-    public void setIcon() {
-       setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("osso.png")));
-    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLabel2;
@@ -281,6 +318,4 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jmiListarAnimais;
     private javax.swing.JMenuItem jmiListarAnimaisAdotados;
     // End of variables declaration//GEN-END:variables
-
-   
 }
