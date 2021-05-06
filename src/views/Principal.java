@@ -259,6 +259,23 @@ public class Principal extends javax.swing.JFrame {
         jDesktopPane1.add(tela);
         tela.setVisible(true);
     }//GEN-LAST:event_jmiListarAnimaisAdotadosActionPerformed
+    
+    private void jmSobreMouseClicked(java.awt.event.MouseEvent evt) {                                     
+        JOptionPane.showMessageDialog(null, "Software desenvolvido para disciplina de Programação Orientada a Objetos, ofertada pela Professora Vânia Neves no Instituto de Computação da Universidade Federal Fluminense.\n\n" +
+                                            "Trabalho feito por Gabriel Barbedo, Lucas Couto e Lucas Pimenta.\n\n" +
+                                            "O Projeto “A-DOTA” consiste em um software desenvolvido para auxiliar o controle de animais em situação de adoção, onde se pode gerenciar desde a sua entrada no sistema\nde adoção até o registro da adoção em si.\n\n" +
+                                            "O programa se concentra a princípio na Adoção de Cães e Gatos e tem como escopo o estado do Rio de Janeiro e suas cidades.\n\n" +
+                                            "Utilizou-se nesse projeto a linguagem Java, também a interface gráfica Java Swing, além disso:\n" +
+                                            "Orientação a Objetos;\n" +
+                                            "Construtores, pacotes e encapsulamento;\n" +
+                                            "Atributos e métodos estáticos;\n" +
+                                            "Herança;\n" +
+                                            "Polimorfismo;\n" +
+                                            "Classes abstratas e interfaces;\n" +
+                                            "Arquivos;\n" +
+                                            "Tratamento de Exceções;\n");
+    }                                    
+
      /**
      * @param args the command line arguments
      */
