@@ -9,7 +9,6 @@ O programa se concentra a princípio na Adoção de Cães e Gatos e tem como esc
 Utilizou-se nesse projeto a linguagem Java, também a interface gráfica Java Swing, além disso:
 
 Orientação a Objetos;
-
 Construtores, pacotes e encapsulamento;
 Atributos e métodos estáticos;
 Herança;
