@@ -197,4 +197,10 @@ public class CadastroAnimal extends FormPadrao{
             JOptionPane.showMessageDialog(null, e.getMessage()+"\n");
         }
     }
+    
+    @Override
+    public void remover(){}
+
+    @Override
+    public void buscar(){}
 }
