@@ -117,30 +117,50 @@ public class CadastroAbrigo extends FormPadrao{
     }
     
     //preenche o JComboBoxEstado com as informações armazenadas em um ARQUIVO
-    public void preencheEstado(String path) throws IOException {
+    //não aceita valores numéricos encontrados na busca pelos dados do arquivo
+    public void preencheEstado(String path) throws IOException, ValorInvalidoException {
         BufferedReader buffRead = new BufferedReader(new FileReader(path));
         String linha = "";
-        while (true) {
-            if (linha != null) {
-                jcbEstado.addItem(linha);
-            } else
-                break;
-            linha = buffRead.readLine();
+        
+        try{
+            while (true) {
+                if (linha != null) {
+                    if (linha.contains("[0-9]+")){
+                        throw new ValorInvalidoException("Valor numérico é inválido.");
+                    }
+                    jcbEstado.addItem(linha);
+                } else
+                    break;
+                linha = buffRead.readLine();
+            }
+            buffRead.close();
         }
-        buffRead.close();
+        catch (ValorInvalidoException e){
+            JOptionPane.showMessageDialog(null, e.getMessage()+"\n");
+        }
     }
     
     //preenche o JComboBoxCidade com as informações armazenadas em um ARQUIVO
-    public void preencheCidade(String path) throws IOException {
+    //não aceita valores numéricos encontrados na busca pelos dados do arquivo
+    public void preencheCidade(String path) throws IOException, ValorInvalidoException {
         BufferedReader buffRead = new BufferedReader(new FileReader(path));
         String linha = "";
-        while (true) {
-            if (linha != null) {
-                jcbCidade.addItem(linha);
-            } else
-                break;
-            linha = buffRead.readLine();
+        
+        try{
+            while (true) {
+                if (linha != null) {
+                    if (linha.contains("[0-9]+")){
+                        throw new ValorInvalidoException("Valor numérico é inválido.");
+                    }
+                    jcbCidade.addItem(linha);
+                } else
+                    break;
+                linha = buffRead.readLine();
+            }
+            buffRead.close();
         }
-        buffRead.close();
-    }       
+        catch (ValorInvalidoException e){
+            JOptionPane.showMessageDialog(null, e.getMessage()+"\n");
+        }
+    }     
 }
