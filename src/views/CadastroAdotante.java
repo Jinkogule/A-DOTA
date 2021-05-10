@@ -93,4 +93,10 @@ public class CadastroAdotante extends FormPadrao{
         jtfEnderecoAdotante.setText("");
         jtfIdadeAdotante.setText("");
     }
+    
+    @Override
+    public void remover(){}
+
+    @Override
+    public void buscar(){}
 }
