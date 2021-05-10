@@ -7,6 +7,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 public class CadastroAbrigo extends FormPadrao{
@@ -27,7 +28,7 @@ public class CadastroAbrigo extends FormPadrao{
     JLabel jlCEP;
     JTextField jtfCEP;
     
-    public CadastroAbrigo() throws IOException{
+    public CadastroAbrigo() throws IOException, ValorInvalidoException{
         setTitle("Cadastro de Abrigo");
         preencheEstado("src/arquivos/estados.txt");
         preencheCidade("src/arquivos/cidades.txt");

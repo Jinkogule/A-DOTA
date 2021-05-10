@@ -5,4 +5,6 @@ import javax.swing.table.DefaultTableModel;
 public interface InterfaceControle {
     public void salvarControle(Object... valor);
     public void preencherTabelaControle(DefaultTableModel valor);
+    public void removerControle();
+    public void buscarControle();
 }

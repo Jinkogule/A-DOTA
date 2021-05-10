@@ -100,4 +100,10 @@ public class AnimaisDao implements InterfaceDao{
         }
         
     }
+
+    @Override
+    public void removerDao(){}
+
+    @Override
+    public void buscarDao(){}
 }

@@ -95,4 +95,10 @@ public class AbrigoDao implements InterfaceDao{
             JOptionPane.showMessageDialog(null, "Erro: "+e);
         }    
     }
+
+    @Override
+    public void removerDao(){}
+
+    @Override
+    public void buscarDao(){}
 }

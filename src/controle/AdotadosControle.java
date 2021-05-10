@@ -30,4 +30,10 @@ public class AdotadosControle implements InterfaceControle{
     public void preencherTabelaControle(DefaultTableModel valor) {
         ad.preencherTabelaDao(valor);
     }
+
+    @Override
+    public void removerControle(){}
+
+    @Override
+    public void buscarControle(){}
 }

@@ -31,7 +31,7 @@ public class CadastroAnimal extends FormPadrao{
     JLabel jlAbrigo;
     JComboBox jcbAbrigo; //static para poder ser referenciada na função estática "preencheAbrigo"
     
-    public CadastroAnimal() throws IOException{
+    public CadastroAnimal() throws IOException, ValorInvalidoException{
         setTitle("Cadastro de Animal");
         preencheAbrigo();
         preenchePorte("src/arquivos/porte.txt");

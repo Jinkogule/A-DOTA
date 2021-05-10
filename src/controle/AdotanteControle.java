@@ -39,4 +39,10 @@ public class AdotanteControle implements InterfaceControle{
     public void preencherTabelaControle(DefaultTableModel valor) {
         ad.preencherTabelaDao(valor);
     }
+
+    @Override
+    public void removerControle(){}
+
+    @Override
+    public void buscarControle(){}
 }
