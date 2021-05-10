@@ -168,6 +168,7 @@ public class CadastroAnimal extends FormPadrao{
                 linha = buffRead.readLine();
             }
             buffRead.close();
+        }
         catch (ValorInvalidoException e){
             JOptionPane.showMessageDialog(null, e.getMessage()+"\n");
         }
