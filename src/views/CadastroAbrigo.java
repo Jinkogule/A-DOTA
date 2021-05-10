@@ -162,5 +162,11 @@ public class CadastroAbrigo extends FormPadrao{
         catch (ValorInvalidoException e){
             JOptionPane.showMessageDialog(null, e.getMessage()+"\n");
         }
-    }     
+    }
+    
+    @Override
+    public void remover(){}
+
+    @Override
+    public void buscar(){}
 }
