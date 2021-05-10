@@ -217,6 +217,8 @@ abstract public class FormPadrao extends javax.swing.JInternalFrame {
     abstract public void salvar();
     abstract public void habilitaCampos(boolean estado);  //Metodo para habilitar e desabilitar acesso aos campos de edição
     abstract public void limpaCampo(); //Metodo para limpar os campos do formulário
+    abstract public void remover();
+    abstract public void buscar();
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
