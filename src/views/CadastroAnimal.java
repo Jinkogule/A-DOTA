@@ -151,30 +151,47 @@ public class CadastroAnimal extends FormPadrao{
     }
     
     //preenche o JComboBoxTipo com as informações armazenadas em um ARQUIVO
-    public void preencheTipo(String path) throws IOException {
+    //não aceita valores numéricos encontrados na busca pelos dados do arquivo
+    public void preencheTipo(String path) throws IOException, ValorInvalidoException {
         BufferedReader buffRead = new BufferedReader(new FileReader(path));
         String linha = "";
-        while (true) {
-            if (linha != null) {
-                jcbTipo.addItem(linha);
-            } else
-                break;
-            linha = buffRead.readLine();
+        
+        try{
+            while (true) {
+                if (linha != null) {
+                    if (linha.contains("[0-9]+")){
+                        throw new ValorInvalidoException("Valor numérico é inválido.");
+                    }
+                    jcbTipo.addItem(linha);
+                } else
+                    break;
+                linha = buffRead.readLine();
+            }
+            buffRead.close();
+        catch (ValorInvalidoException e){
+            JOptionPane.showMessageDialog(null, e.getMessage()+"\n");
         }
-        buffRead.close();
     }
     
     //preenche o JComboBoxPorte com as informações armazenadas em um ARQUIVO
-    public void preenchePorte(String path) throws IOException {
+    //não aceita valores numéricos encontrados na busca pelos dados do arquivo
+    public void preenchePorte(String path) throws IOException, ValorInvalidoException {
         BufferedReader buffRead = new BufferedReader(new FileReader(path));
         String linha = "";
-        while (true) {
-            if (linha != null) {
-                jcbPorte.addItem(linha);
-            } else
-                break;
-            linha = buffRead.readLine();
+        
+        try{
+            while (true) {
+                if (linha != null) {
+                    if (linha.contains("[0-9]+")){
+                        throw new ValorInvalidoException("Valor numérico é inválido.");
+                    }
+                    jcbPorte.addItem(linha);
+                } else
+                    break;
+                linha = buffRead.readLine();
+            }
+            buffRead.close();
+        catch (ValorInvalidoException e){
+            JOptionPane.showMessageDialog(null, e.getMessage()+"\n");
         }
-        buffRead.close();
     }
-}
