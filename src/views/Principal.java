@@ -1,4 +1,5 @@
 /*
+2)a)
 Esse trabalho já implementa persistência de dados em um banco de dados, porém somente com “inserir” (com os métodos “salvar”)
 e “listar” (com os métodos “preencherTabela”). A forma em que o programa do meu grupo está implementado favorece bastante essa implementação,
 pois a maneira como fizemos (recebendo as informações pelas classes “Controle”, enviando essas informações para as classes “Modelo” e instanciando
@@ -6,6 +7,11 @@ pois a maneira como fizemos (recebendo as informações pelas classes “Control
 funcionalidades. Seria necessário somente implementar novos métodos nas classes já existentes. Por exemplo, caso fosse implementado “remoção” e
 “busca” em nosso projeto, seria necessário somente implementar essas classes nos “cadastros” e inserir esses métodos nas interfaces, forçando a 
 implementação deles nas classes “controle” e “dao” (que implementam essas interfaces).
+
+2)b)
+A implementação feita no projeto já é um exemplo de como salvar um objeto de diversas maneiras, com métodos utilizados para fazer isso em arquivos
+(no caso desse projeto, buscando as strings nos arquivos e separando-as por linha para obter os dados) ou em banco de dados (no caso desse projeto,
+buscando-as por meio da utilização de jdbc e selects), e podendo adaptar esses métodos para ficar funcional também para outros meios de salvar esses dados.
 */
 
 package views;
