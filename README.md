@@ -1,5 +1,5 @@
 # Trabalho de Programação Orientada a Objetos - A-DOTA
-Software desenvolvido para disciplina TCC00328 - Programação Orientada a Objetos, ministrada pela Professora Vânia Neves no Instituto de Computação da Universidade Federal Fluminense.
+Software desenvolvido para disciplina TCC00328 - Programação Orientada a Objetos, ministrada pela Professora Vânia Neves no Instituto de Computação da Universidade Federal Fluminense, durante o período 2º/2020.
 
 Trabalho feito por Gabriel Barbedo, Lucas Couto e Lucas Pimenta. 
 
