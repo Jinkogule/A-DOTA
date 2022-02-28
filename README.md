@@ -1,5 +1,5 @@
-# POO
-Software desenvolvido para disciplina de Programação Orientada a Objetos, ofertada pela Professora Vânia Neves no Instituto de Computação da Universidade Federal Fluminense.
+# Trabalho de Programação Orientada a Objetos - A-DOTA
+Software desenvolvido para disciplina TCC00328 - Programação Orientada a Objetos, ministrada pela Professora Vânia Neves no Instituto de Computação da Universidade Federal Fluminense.
 
 Trabalho feito por Gabriel Barbedo, Lucas Couto e Lucas Pimenta. 
 
