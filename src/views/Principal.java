@@ -21,6 +21,8 @@ import java.awt.Image;
 import java.awt.Graphics;
 import java.awt.Toolkit;
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
@@ -228,9 +230,10 @@ public class Principal extends javax.swing.JFrame {
             CadastroAnimal tela = new CadastroAnimal();
             jDesktopPane1.add(tela);
             tela.setVisible(true);
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             JOptionPane.showMessageDialog(null, "Erro: "+e);
+        } catch (ValorInvalidoException ex) {
+            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jmiCadastroAnimalActionPerformed
 
@@ -251,9 +254,10 @@ public class Principal extends javax.swing.JFrame {
             CadastroAbrigo tela = new CadastroAbrigo();
             jDesktopPane1.add(tela);
             tela.setVisible(true);
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             JOptionPane.showMessageDialog(null, "Erro: "+e);
+        } catch (ValorInvalidoException ex) {
+            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jmiCadastroAbrigoActionPerformed
 

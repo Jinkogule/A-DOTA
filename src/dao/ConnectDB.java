@@ -10,7 +10,7 @@ public class ConnectDB {
     private static final String driverClass = "com.mysql.cj.jdbc.Driver";
     private static final String URL = "jdbc:mysql://localhost:3306/a_dota?useTimezone=true&serverTimezone=UTC";
     private static final String usuario = "root";
-    private static final String senha = "";
+    private static final String senha = "12345";
     
     public void abreConexao(){
         try{
