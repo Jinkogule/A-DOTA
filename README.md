@@ -24,7 +24,7 @@ O **A-DOTA** é um software fictício desenvolvido para auxiliar no gerenciament
 
 O projeto foi criado como parte da disciplina Programação Orientada a Objetos, com o objetivo de aplicar conceitos como orientação a objetos; construtores, pacotes e encapsulamento; atributos e métodos estáticos; herança e polimorfismo; classes abstratas e interfaces; manipulação de arquivos; e tratamento de exceções.
 
-O A-DOTA não é um sistema real de adoção de animais. Ele foi desenvolvido apenas como um exercício acadêmico para fins de aprendizagem.
+**Observação:** Este projeto foi desenvolvido apenas como um exercício acadêmico para fins de aprendizagem. Portanto, não se trata de um sistema real de adoção de animais.
 
 ## 📋 Documentação
 
@@ -54,7 +54,7 @@ Antes de começar, certifique-se de:
 
 - Instalar o **[Git](https://git-scm.com/)**.  
 - Instalar o **[MySQL Server 8.0.3](https://dev.mysql.com/downloads/mysql/)** (ou versão compatível).  
-- Executar o **[script de banco de dados](https://github.com/Jinkogule/A-DOTA/blob/main/A-DOTA.sql)** para criar o schema e as tabelas necessárias.    
+- Executar o **[script de banco de dados](https://github.com/Jinkogule/A-DOTA/blob/main/A_DOTA.sql)** para criar o schema e as tabelas necessárias.    
 - Instalar o **[JDK 15](https://www.oracle.com/br/java/technologies/downloads/#java15)** (ou versão compatível) e configurar a variável `JAVA_HOME` com o caminho correto do JDK.
 - Baixar o **[MySQL Connector/J](https://dev.mysql.com/downloads/connector/j/)** para conectar o projeto ao MySQL.  
 - Instalar o **[Apache NetBeans IDE](https://netbeans.apache.org/front/main/index.html)** para rodar o projeto.
