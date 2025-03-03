@@ -12,6 +12,8 @@
  <a href="#-documentação">Documentação</a> • 
  <a href="#-desenvolvimento">Desenvolvimento</a> • 
  <a href="#-tecnologias">Tecnologias</a> • 
+ <a href="#-executar-o-projeto-localmente">Executar o projeto localmente</a> • 
+ <a href="#-layout">Layout</a> •
  <a href="#-autores">Autores</a> •
  <a href="#-licença">Licença</a>
 </p>
@@ -81,6 +83,71 @@ git clone https://github.com/Jinkogule/A-DOTA
 
 5. **Execute a aplicação**  
    - No Apache NetBeans, clique com o botão direito no projeto e selecione *Run*.  
+
+## 🎨 Layout
+
+### Telas da aplicação
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="/src/img/screenshots/pagina_inicial.png" alt="Página inicial" title="Página inicial">
+      <br>
+      <em>Página inicial</em>
+    </td>
+    <td align="center">
+      <img src="/src/img/screenshots/menu.png" alt="Menu" title="Menu">
+      <br>
+      <em>Menu</em>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="/src/img/screenshots/cadastro_de_abrigo.png" alt="Cadastro de abrigo" title="Cadastro de abrigo">
+      <br>
+      <em>Cadastro de abrigo</em>
+    </td>
+    <td align="center">
+      <img src="/src/img/screenshots/cadastro_de_adotante.png" alt="Cadastro de adotante" title="Cadastro de adotante">
+      <br>
+      <em>Cadastro de adotante</em>
+    </td>
+    <td align="center">
+      <img src="/src/img/screenshots/cadastro_de_animal.png" alt="Cadastro de animal" title="Cadastro de animal">
+      <br>
+      <em>Cadastro de animal</em>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="/src/img/screenshots/lista_de_abrigos.png" alt="Lista de abrigos" title="Lista de abrigos">
+      <br>
+      <em>Lista de abrigos</em>
+    </td>
+    <td align="center">
+      <img src="/src/img/screenshots/lista_de_adotantes.png" alt="Lista de adotantes" title="Lista de adotantes">
+      <br>
+      <em>Lista de adotantes</em>
+    </td>
+    <td align="center">
+      <img src="/src/img/screenshots/lista_de_animais.png" alt="Lista de animais disponíveis para adoção" title="Lista de animais disponíveis para adoção">
+      <br>
+      <em>Lista de animais disponíveis para adoção</em>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="/src/img/screenshots/adocao_de_animal.png" alt="Adoção de animal" title="Adoção de animal">
+      <br>
+      <em>Adoção de animal</em>
+    </td>
+    <td align="center">
+      <img src="/src/img/screenshots/lista_de_animais_adotados.png" alt="Lista de animais adotados" title="Lista de animais adotados">
+      <br>
+      <em>Lista de animais adotados</em>
+    </td>
+  </tr>
+</table>
 
 ## ✒ Autores
 
