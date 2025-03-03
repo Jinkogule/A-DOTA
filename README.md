@@ -1,5 +1,5 @@
 <div align="center">
-<img style="" src="https://github.com/Jinkogule/A-DOTA/blob/main/src/img/a-dotanew.png" width="250px;" alt=""/>
+<img style="" src="https://github.com/Jinkogule/A-DOTA/blob/main/src/img/logo_readme.png" width="250px;" alt=""/>
 <br>
 
 [![Release](https://img.shields.io/github/v/release/Jinkogule/A-DOTA?style=for-the-badge)](https://github.com/Jinkogule/BandejApp/releases)
@@ -88,61 +88,87 @@ git clone https://github.com/Jinkogule/A-DOTA
 
 ### Telas da aplicação
 
-<table>
+<table align="center" width="100%">
   <tr>
-    <td align="center">
-      <img src="/src/img/screenshots/pagina_inicial.png" alt="Página inicial" title="Página inicial">
+    <td align="center" colspan="2"><strong>Páginas iniciais</strong></td>
+  </tr>
+  <tr>
+    <td align="center" width="33%">
+      <img src="/src/img/screenshots/pagina_inicial.png" alt="Página inicial" title="Página inicial" width="100%">
       <br>
       <em>Página inicial</em>
     </td>
-    <td align="center">
-      <img src="/src/img/screenshots/menu.png" alt="Menu" title="Menu">
+    <td align="center" width="33%">
+      <img src="/src/img/screenshots/menu.png" alt="Menu" title="Menu" width="100%">
       <br>
-      <em>Menu</em>
+      <em>Menu (Listar)</em>
+    </td>
+    <td align="center" width="33%">
+      <img src="/src/img/screenshots/menu_2.png" alt="Menu_2" title="Menu_2" width="100%">
+      <br>
+      <em>Menu (Cadastrar)</em>
     </td>
   </tr>
+</table>
+
+<table align="center" width="100%">
   <tr>
-    <td align="center">
-      <img src="/src/img/screenshots/cadastro_de_abrigo.png" alt="Cadastro de abrigo" title="Cadastro de abrigo">
+    <td align="center" colspan="3"><strong>Cadastros</strong></td>
+  </tr>
+  <tr>
+    <td align="center" width="33%">
+      <img src="/src/img/screenshots/cadastro_de_abrigo.png" alt="Cadastro de abrigo" title="Cadastro de abrigo" width="100%">
       <br>
       <em>Cadastro de abrigo</em>
     </td>
-    <td align="center">
-      <img src="/src/img/screenshots/cadastro_de_adotante.png" alt="Cadastro de adotante" title="Cadastro de adotante">
+    <td align="center" width="33%">
+      <img src="/src/img/screenshots/cadastro_de_adotante.png" alt="Cadastro de adotante" title="Cadastro de adotante" width="100%">
       <br>
       <em>Cadastro de adotante</em>
     </td>
-    <td align="center">
-      <img src="/src/img/screenshots/cadastro_de_animal.png" alt="Cadastro de animal" title="Cadastro de animal">
+    <td align="center" width="33%">
+      <img src="/src/img/screenshots/cadastro_de_animal.png" alt="Cadastro de animal" title="Cadastro de animal" width="100%">
       <br>
       <em>Cadastro de animal</em>
     </td>
   </tr>
+</table>
+
+<table align="center" width="100%">
   <tr>
-    <td align="center">
-      <img src="/src/img/screenshots/lista_de_abrigos.png" alt="Lista de abrigos" title="Lista de abrigos">
+    <td align="center" colspan="3"><strong>Listagens</strong></td>
+  </tr>
+  <tr>
+    <td align="center" width="33%">
+      <img src="/src/img/screenshots/lista_de_abrigos.png" alt="Lista de abrigos" title="Lista de abrigos" width="100%">
       <br>
       <em>Lista de abrigos</em>
     </td>
-    <td align="center">
-      <img src="/src/img/screenshots/lista_de_adotantes.png" alt="Lista de adotantes" title="Lista de adotantes">
+    <td align="center" width="33%">
+      <img src="/src/img/screenshots/lista_de_adotantes.png" alt="Lista de adotantes" title="Lista de adotantes" width="100%">
       <br>
       <em>Lista de adotantes</em>
     </td>
-    <td align="center">
-      <img src="/src/img/screenshots/lista_de_animais.png" alt="Lista de animais disponíveis para adoção" title="Lista de animais disponíveis para adoção">
+    <td align="center" width="33%">
+      <img src="/src/img/screenshots/lista_de_animais.png" alt="Lista de animais disponíveis para adoção" title="Lista de animais disponíveis para adoção" width="100%">
       <br>
       <em>Lista de animais disponíveis para adoção</em>
     </td>
   </tr>
+</table>
+
+<table align="center" width="100%">
   <tr>
-    <td align="center">
-      <img src="/src/img/screenshots/adocao_de_animal.png" alt="Adoção de animal" title="Adoção de animal">
+    <td align="center" colspan="2"><strong>Adoções</strong></td>
+  </tr>
+  <tr>
+    <td align="center" width="50%">
+      <img src="/src/img/screenshots/adocao_de_animal.png" alt="Adoção de animal" title="Adoção de animal" width="100%">
       <br>
       <em>Adoção de animal</em>
     </td>
-    <td align="center">
-      <img src="/src/img/screenshots/lista_de_animais_adotados.png" alt="Lista de animais adotados" title="Lista de animais adotados">
+    <td align="center" width="50%">
+      <img src="/src/img/screenshots/lista_de_animais_adotados.png" alt="Lista de animais adotados" title="Lista de animais adotados" width="100%">
       <br>
       <em>Lista de animais adotados</em>
     </td>
