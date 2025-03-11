@@ -4,178 +4,181 @@
 
 [![Release](https://img.shields.io/github/v/release/Jinkogule/A-DOTA?style=for-the-badge)](https://github.com/Jinkogule/BandejApp/releases)
 [![License](https://img.shields.io/github/license/Jinkogule/A-DOTA?style=for-the-badge)](LICENSE)<br>
-![Status](https://img.shields.io/badge/STATUS-CONCLU%C3%8DDO%20-brightgreen?style=for-the-badge)
+![Status](https://img.shields.io/badge/STATUS-COMPLETED-brightgreen?style=for-the-badge)
 </div>
 
 <p align="center">
- <a href="#-sobre-o-projeto">Sobre</a> •
- <a href="#-documentação">Documentação</a> • 
- <a href="#-desenvolvimento">Desenvolvimento</a> • 
- <a href="#-tecnologias">Tecnologias</a> • 
- <a href="#-executar-o-projeto-localmente">Executar o projeto localmente</a> • 
- <a href="#-layout">Layout</a> •
- <a href="#-autores">Autores</a> •
- <a href="#-licença">Licença</a>
+  <a href="#-about-the-project">About</a> •
+  <a href="#-documentation">Documentation</a> •
+  <a href="#-development">Development</a> •
+  <a href="#-technologies">Technologies</a> •
+  <a href="#-run-the-project-locally">Run the project locally</a> •
+  <a href="#-layout">Layout</a> •
+  <a href="#-authors">Authors</a> •
+  <a href="#-license">License</a>
+  <br>
+  <a href="./README.pt-BR.md">Português (BR)</a> •
+  <a href="./README.md">English</a>
 </p>
 
 ---
 
-## 💻 Sobre o projeto
+## 💻 About the Project
 
-O **A-DOTA** é um software fictício desenvolvido para auxiliar no gerenciamento de animais em situação de adoção. O programa foca, inicialmente, na adoção de cães e gatos e tem como escopo o estado do Rio de Janeiro e suas cidades. Através do sistema, é possível cadastrar adotantes, abrigos e animais; listar adotantes, abrigos, animais disponíveis para adoção e animais já adotados; além de realizar a adoção, selecionando um adotante e um animal disponível.
+**A-DOTA** is a fictional software developed to assist in managing animals available for adoption. Initially, the program focuses on the adoption of dogs and cats and is limited to the state of Rio de Janeiro and its cities. Through the system, users can register adopters, shelters, and animals; list adopters, shelters, animals available for adoption, and already adopted animals; and facilitate the adoption process by selecting an adopter and an available animal.
 
-O projeto foi criado como parte da disciplina Programação Orientada a Objetos, com o objetivo de aplicar conceitos como orientação a objetos; construtores, pacotes e encapsulamento; atributos e métodos estáticos; herança e polimorfismo; classes abstratas e interfaces; manipulação de arquivos; e tratamento de exceções.
+The project was created as part of the Object-Oriented Programming course, with the goal of applying concepts such as object orientation; constructors, packages, and encapsulation; static attributes and methods; inheritance and polymorphism; abstract classes and interfaces; file handling; and exception handling.
 
-**Observação:** Este projeto foi desenvolvido apenas como um exercício acadêmico para fins de aprendizagem. Portanto, não se trata de um sistema real de adoção de animais.
+**Note:** This project was developed solely as an academic exercise for learning purposes. Therefore, it is not a real animal adoption system.
 
-## 📋 Documentação
+## 📋 Documentation
 
 -   **[Wiki](https://github.com/Jinkogule/A-DOTA/wiki)**
 
-## 🧑🏻‍💻 Desenvolvimento
+## 🧑🏻‍💻 Development
 
--   **[Código fonte](https://github.com/Jinkogule/A-DOTA)**
+-   **[Source Code](https://github.com/Jinkogule/A-DOTA)**
 -   **[Issue Tracking](https://github.com/Jinkogule/A-DOTA/issues)**
 
-## 🛠 Tecnologias
+## 🛠 Technologies
 
-### **Back-End (Aplicação Desktop)**  
+### **Back-End (Desktop Application)**  
 
 -   **[Java 15](https://www.oracle.com/br/java/technologies/downloads/#java15)**  
 -   **[Java Swing](https://docs.oracle.com/javase/tutorial/uiswing/)**    
 
-### **Banco de Dados**
+### **Database**
 
 -   **[MySQL 8.0.3](https://www.mysql.com/)**
 
-## ⚙ Executar o projeto localmente  
+## ⚙ Run the Project Locally  
 
-### **Pré-Requisitos**  
+### **Prerequisites**  
 
-Antes de começar, certifique-se de:  
+Before you begin, make sure to: 
 
-- Instalar o **[Git](https://git-scm.com/)**.  
-- Instalar o **[MySQL Server 8.0.3](https://dev.mysql.com/downloads/mysql/)** (ou versão compatível).  
-- Executar o **[script de banco de dados](https://github.com/Jinkogule/A-DOTA/blob/main/A_DOTA.sql)** para criar o schema e as tabelas necessárias.    
-- Instalar o **[JDK 15](https://www.oracle.com/br/java/technologies/downloads/#java15)** (ou versão compatível) e configurar a variável `JAVA_HOME` com o caminho correto do JDK.
-- Baixar o **[MySQL Connector/J](https://dev.mysql.com/downloads/connector/j/)** para conectar o projeto ao MySQL.  
-- Instalar o **[Apache NetBeans IDE](https://netbeans.apache.org/front/main/index.html)** para rodar o projeto.
+- Install **[Git](https://git-scm.com/)**.  
+- Install **[MySQL Server 8.0.3](https://dev.mysql.com/downloads/mysql/)** (or a compatible version).
+- Run the **[script de banco de dados](https://github.com/Jinkogule/A-DOTA/blob/main/A_DOTA.sql)** to create the required schema and tables.   
+- Install **[JDK 15](https://www.oracle.com/br/java/technologies/downloads/#java15)** (or a compatible version) and set the `JAVA_HOME` variable with the correct JDK path.
+- Download **[MySQL Connector/J](https://dev.mysql.com/downloads/connector/j/)** to connect the project to MySQL.  
+- Install **[Apache NetBeans IDE](https://netbeans.apache.org/front/main/index.html)** to run the project.
 
-### **Rodando a Aplicação**  
+### **Running the Application**  
 
-1. **Clone este repositório**
+1. **Clone this repository**
 ```bash
 git clone https://github.com/Jinkogule/A-DOTA    
 ```
 
-2. **Abra o projeto no Apache NetBeans IDE**  
-   - No menu, vá em *File* > *Open Project* e selecione a pasta do projeto.  
+2. **Open the project in Apache NetBeans IDE**  
+   - In the menu, go to File > Open Project and select the project folder.
 
-3. **Configure a conexão com o banco de dados**  
-   - Se necessário, edite a classe `ConnectDB.java` (localizada em `src/dao/ConnectDB.java`).  
-   - Ajuste os dados de conexão com o MySQL.  
+3. **Configure the database connection**  
+   - If needed, edit the `ConnectDB.java` file (located in `src/dao/ConnectDB.java`).  
+   - Adjust the MySQL connection details.
 
-4. **Adicione o MySQL Connector/J às Libraries do projeto**  
-   - No NetBeans, clique com o botão direito no projeto → *Properties* → *Libraries*.  
-   - Na aba *Compile* (*Compile-time Libraries*), clique no **"+"** ao lado da opção *Classpath*.  
-   - Selecione *Add JAR/Folder* e escolha o arquivo `.jar` do **MySQL Connector/J** baixado.  
-   - Confirme e aplique as alterações.  
+4. **Add MySQL Connector/J to the project libraries**  
+   - In NetBeans, right-click the project → Properties → Libraries.  
+   - In the Compile (Compile-time Libraries) tab, click the **"+"** next to Classpath.
+   - Select Add JAR/Folder and choose the `.jar` file for **MySQL Connector/J**.
+   - Confirm and apply the changes.  
 
-5. **Execute a aplicação**  
-   - No Apache NetBeans, clique com o botão direito no projeto e selecione *Run*.  
+5. **Run the application**  
+   - In Apache NetBeans, right-click the project and select Run.  
 
 ## 🎨 Layout
 
-### Telas da aplicação
+### Application Screens
 
 <table align="center" width="100%">
   <tr>
-    <td align="center" colspan="2"><strong>Páginas iniciais</strong></td>
+    <td align="center" colspan="2"><strong>Home pages</strong></td>
   </tr>
   <tr>
     <td align="center" width="33%">
-      <img src="/src/img/screenshots/pagina_inicial.png" alt="Página inicial" title="Página inicial" width="100%">
+      <img src="/src/img/screenshots/pagina_inicial.png" alt="Home page" title="Home page" width="100%">
       <br>
-      <em>Página inicial</em>
+      <em>Home page</em>
     </td>
     <td align="center" width="33%">
-      <img src="/src/img/screenshots/menu.png" alt="Menu" title="Menu" width="100%">
+      <img src="/src/img/screenshots/menu.png" alt="Menu (list)" title="Menu (list)" width="100%">
       <br>
-      <em>Menu (Listar)</em>
+      <em>Menu (list)</em>
     </td>
     <td align="center" width="33%">
-      <img src="/src/img/screenshots/menu_2.png" alt="Menu_2" title="Menu_2" width="100%">
+      <img src="/src/img/screenshots/menu_2.png" alt="Menu (register)" title="Menu (register)" width="100%">
       <br>
-      <em>Menu (Cadastrar)</em>
+      <em>Menu (register)</em>
     </td>
   </tr>
 </table>
 
 <table align="center" width="100%">
   <tr>
-    <td align="center" colspan="3"><strong>Cadastros</strong></td>
+    <td align="center" colspan="3"><strong>Registrations</strong></td>
   </tr>
   <tr>
     <td align="center" width="33%">
-      <img src="/src/img/screenshots/cadastro_de_abrigo.png" alt="Cadastro de abrigo" title="Cadastro de abrigo" width="100%">
+      <img src="/src/img/screenshots/cadastro_de_abrigo.png" alt="Shelter registration" title="Shelter registration" width="100%">
       <br>
-      <em>Cadastro de abrigo</em>
+      <em>Shelter registration</em>
     </td>
     <td align="center" width="33%">
-      <img src="/src/img/screenshots/cadastro_de_adotante.png" alt="Cadastro de adotante" title="Cadastro de adotante" width="100%">
+      <img src="/src/img/screenshots/cadastro_de_adotante.png" alt="Adopter registration" title="Adopter registration" width="100%">
       <br>
-      <em>Cadastro de adotante</em>
+      <em>Adopter registration</em>
     </td>
     <td align="center" width="33%">
-      <img src="/src/img/screenshots/cadastro_de_animal.png" alt="Cadastro de animal" title="Cadastro de animal" width="100%">
+      <img src="/src/img/screenshots/cadastro_de_animal.png" alt="Animal registration" title="Animal registration" width="100%">
       <br>
-      <em>Cadastro de animal</em>
-    </td>
-  </tr>
-</table>
-
-<table align="center" width="100%">
-  <tr>
-    <td align="center" colspan="3"><strong>Listagens</strong></td>
-  </tr>
-  <tr>
-    <td align="center" width="33%">
-      <img src="/src/img/screenshots/lista_de_abrigos.png" alt="Lista de abrigos" title="Lista de abrigos" width="100%">
-      <br>
-      <em>Lista de abrigos</em>
-    </td>
-    <td align="center" width="33%">
-      <img src="/src/img/screenshots/lista_de_adotantes.png" alt="Lista de adotantes" title="Lista de adotantes" width="100%">
-      <br>
-      <em>Lista de adotantes</em>
-    </td>
-    <td align="center" width="33%">
-      <img src="/src/img/screenshots/lista_de_animais.png" alt="Lista de animais disponíveis para adoção" title="Lista de animais disponíveis para adoção" width="100%">
-      <br>
-      <em>Lista de animais disponíveis para adoção</em>
+      <em>Animal registration</em>
     </td>
   </tr>
 </table>
 
 <table align="center" width="100%">
   <tr>
-    <td align="center" colspan="2"><strong>Adoções</strong></td>
+    <td align="center" colspan="3"><strong>Listings</strong></td>
+  </tr>
+  <tr>
+    <td align="center" width="33%">
+      <img src="/src/img/screenshots/lista_de_abrigos.png" alt="Shelter list" title="Shelter list" width="100%">
+      <br>
+      <em>Shelter list</em>
+    </td>
+    <td align="center" width="33%">
+      <img src="/src/img/screenshots/lista_de_adotantes.png" alt="Adopter list" title="Adopter list" width="100%">
+      <br>
+      <em>Adopter list</em>
+    </td>
+    <td align="center" width="33%">
+      <img src="/src/img/screenshots/lista_de_animais.png" alt="List of available animals for adoption" title="List of available animals for adoption" width="100%">
+      <br>
+      <em>List of available animals for adoption</em>
+    </td>
+  </tr>
+</table>
+
+<table align="center" width="100%">
+  <tr>
+    <td align="center" colspan="2"><strong>Adoptions</strong></td>
   </tr>
   <tr>
     <td align="center" width="50%">
-      <img src="/src/img/screenshots/adocao_de_animal.png" alt="Adoção de animal" title="Adoção de animal" width="100%">
+      <img src="/src/img/screenshots/adocao_de_animal.png" alt="Animal adoption" title="Animal adoption" width="100%">
       <br>
-      <em>Adoção de animal</em>
+      <em>Animal adoption</em>
     </td>
     <td align="center" width="50%">
-      <img src="/src/img/screenshots/lista_de_animais_adotados.png" alt="Lista de animais adotados" title="Lista de animais adotados" width="100%">
+      <img src="/src/img/screenshots/lista_de_animais_adotados.png" alt="List of adopted animals" title="List of adopted animals" width="100%">
       <br>
-      <em>Lista de animais adotados</em>
+      <em>List of adopted animals</em>
     </td>
   </tr>
 </table>
 
-## ✒ Autores
+## ✒ Authors
 
 <table>
   <tr>
@@ -215,6 +218,6 @@ git clone https://github.com/Jinkogule/A-DOTA
   </tr>
 </table>
 
-## 📝 Licença
+## 📝 License
 
-Este projeto está sob a licença **[MIT](./LICENSE)**.
+This project is licensed under the **[MIT](./LICENSE)** license.
