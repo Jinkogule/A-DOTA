@@ -42,50 +42,50 @@ The project was created as part of the Object-Oriented Programming course, with 
 
 ## 🛠 Technologies
 
-### **Back-End (Desktop Application)**  
+### **Back-End (Desktop Application)**
 
--   **[Java 15](https://www.oracle.com/br/java/technologies/downloads/#java15)**  
--   **[Java Swing](https://docs.oracle.com/javase/tutorial/uiswing/)**    
+-   **[Java 15](https://www.oracle.com/br/java/technologies/downloads/#java15)**
+-   **[Java Swing](https://docs.oracle.com/javase/tutorial/uiswing/)**
 
 ### **Database**
 
 -   **[MySQL 8.0.3](https://www.mysql.com/)**
 
-## ⚙ Run the Project Locally  
+## ⚙ Run the Project Locally
 
-### **Prerequisites**  
+### **Prerequisites**
 
-Before you begin, make sure to: 
+Before you begin, make sure to:
 
-- Install **[Git](https://git-scm.com/)**.  
+- Install **[Git](https://git-scm.com/)**.
 - Install **[MySQL Server 8.0.3](https://dev.mysql.com/downloads/mysql/)** (or a compatible version).
-- Run the **[database script](https://github.com/Jinkogule/A-DOTA/blob/main/A_DOTA.sql)** to create the required schema and tables.   
+- Run the **[database script](https://github.com/Jinkogule/A-DOTA/blob/main/A_DOTA.sql)** to create the required schema and tables.
 - Install **[JDK 15](https://www.oracle.com/br/java/technologies/downloads/#java15)** (or a compatible version) and set the `JAVA_HOME` variable with the correct JDK path.
-- Download **[MySQL Connector/J](https://dev.mysql.com/downloads/connector/j/)** to connect the project to MySQL.  
+- Download **[MySQL Connector/J](https://dev.mysql.com/downloads/connector/j/)** to connect the project to MySQL.
 - Install **[Apache NetBeans IDE](https://netbeans.apache.org/front/main/index.html)** to run the project.
 
-### **Running the Application**  
+### **Running the Application**
 
 1. **Clone this repository**
 ```bash
-git clone https://github.com/Jinkogule/A-DOTA    
+git clone https://github.com/Jinkogule/A-DOTA
 ```
 
-2. **Open the project in Apache NetBeans IDE**  
+2. **Open the project in Apache NetBeans IDE**
    - In the menu, go to File > Open Project and select the project folder.
 
-3. **Configure the database connection**  
-   - If needed, edit the `ConnectDB.java` file (located in `src/dao/ConnectDB.java`).  
+3. **Configure the database connection**
+   - If needed, edit the `ConnectDB.java` file (located in `src/dao/ConnectDB.java`).
    - Adjust the MySQL connection details.
 
-4. **Add MySQL Connector/J to the project libraries**  
-   - In NetBeans, right-click the project → Properties → Libraries.  
+4. **Add MySQL Connector/J to the project libraries**
+   - In NetBeans, right-click the project → Properties → Libraries.
    - In the Compile (Compile-time Libraries) tab, click the **"+"** next to Classpath.
    - Select Add JAR/Folder and choose the `.jar` file for **MySQL Connector/J**.
-   - Confirm and apply the changes.  
+   - Confirm and apply the changes.
 
-5. **Run the application**  
-   - In Apache NetBeans, right-click the project and select Run.  
+5. **Run the application**
+   - In Apache NetBeans, right-click the project and select Run.
 
 ## 🎨 Layout
 

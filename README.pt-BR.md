@@ -42,50 +42,50 @@ O projeto foi criado como parte da disciplina Programação Orientada a Objetos,
 
 ## 🛠 Tecnologias
 
-### **Back-End (Aplicação Desktop)**  
+### **Back-End (Aplicação Desktop)**
 
--   **[Java 15](https://www.oracle.com/br/java/technologies/downloads/#java15)**  
--   **[Java Swing](https://docs.oracle.com/javase/tutorial/uiswing/)**    
+-   **[Java 15](https://www.oracle.com/br/java/technologies/downloads/#java15)**
+-   **[Java Swing](https://docs.oracle.com/javase/tutorial/uiswing/)**
 
 ### **Banco de Dados**
 
 -   **[MySQL 8.0.3](https://www.mysql.com/)**
 
-## ⚙ Executar o projeto localmente  
+## ⚙ Executar o projeto localmente
 
-### **Pré-Requisitos**  
+### **Pré-Requisitos**
 
-Antes de começar, certifique-se de:  
+Antes de começar, certifique-se de:
 
-- Instalar o **[Git](https://git-scm.com/)**.  
-- Instalar o **[MySQL Server 8.0.3](https://dev.mysql.com/downloads/mysql/)** (ou versão compatível).  
-- Executar o **[script de banco de dados](https://github.com/Jinkogule/A-DOTA/blob/main/A_DOTA.sql)** para criar o schema e as tabelas necessárias.    
+- Instalar o **[Git](https://git-scm.com/)**.
+- Instalar o **[MySQL Server 8.0.3](https://dev.mysql.com/downloads/mysql/)** (ou versão compatível).
+- Executar o **[script de banco de dados](https://github.com/Jinkogule/A-DOTA/blob/main/A_DOTA.sql)** para criar o schema e as tabelas necessárias.
 - Instalar o **[JDK 15](https://www.oracle.com/br/java/technologies/downloads/#java15)** (ou versão compatível) e configurar a variável `JAVA_HOME` com o caminho correto do JDK.
-- Baixar o **[MySQL Connector/J](https://dev.mysql.com/downloads/connector/j/)** para conectar o projeto ao MySQL.  
+- Baixar o **[MySQL Connector/J](https://dev.mysql.com/downloads/connector/j/)** para conectar o projeto ao MySQL.
 - Instalar o **[Apache NetBeans IDE](https://netbeans.apache.org/front/main/index.html)** para rodar o projeto.
 
-### **Rodando a Aplicação**  
+### **Rodando a Aplicação**
 
 1. **Clone este repositório**
 ```bash
-git clone https://github.com/Jinkogule/A-DOTA    
+git clone https://github.com/Jinkogule/A-DOTA
 ```
 
-2. **Abra o projeto no Apache NetBeans IDE**  
-   - No menu, vá em *File* > *Open Project* e selecione a pasta do projeto.  
+2. **Abra o projeto no Apache NetBeans IDE**
+   - No menu, vá em *File* > *Open Project* e selecione a pasta do projeto.
 
-3. **Configure a conexão com o banco de dados**  
-   - Se necessário, edite a classe `ConnectDB.java` (localizada em `src/dao/ConnectDB.java`).  
-   - Ajuste os dados de conexão com o MySQL.  
+3. **Configure a conexão com o banco de dados**
+   - Se necessário, edite a classe `ConnectDB.java` (localizada em `src/dao/ConnectDB.java`).
+   - Ajuste os dados de conexão com o MySQL.
 
-4. **Adicione o MySQL Connector/J às Libraries do projeto**  
-   - No NetBeans, clique com o botão direito no projeto → *Properties* → *Libraries*.  
-   - Na aba *Compile* (*Compile-time Libraries*), clique no **"+"** ao lado da opção *Classpath*.  
-   - Selecione *Add JAR/Folder* e escolha o arquivo `.jar` do **MySQL Connector/J** baixado.  
-   - Confirme e aplique as alterações.  
+4. **Adicione o MySQL Connector/J às Libraries do projeto**
+   - No NetBeans, clique com o botão direito no projeto → *Properties* → *Libraries*.
+   - Na aba *Compile* (*Compile-time Libraries*), clique no **"+"** ao lado da opção *Classpath*.
+   - Selecione *Add JAR/Folder* e escolha o arquivo `.jar` do **MySQL Connector/J** baixado.
+   - Confirme e aplique as alterações.
 
-5. **Execute a aplicação**  
-   - No Apache NetBeans, clique com o botão direito no projeto e selecione *Run*.  
+5. **Execute a aplicação**
+   - No Apache NetBeans, clique com o botão direito no projeto e selecione *Run*.
 
 ## 🎨 Layout
 
