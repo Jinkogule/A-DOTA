@@ -59,7 +59,7 @@ Before you begin, make sure to:
 
 - Install **[Git](https://git-scm.com/)**.  
 - Install **[MySQL Server 8.0.3](https://dev.mysql.com/downloads/mysql/)** (or a compatible version).
-- Run the **[script de banco de dados](https://github.com/Jinkogule/A-DOTA/blob/main/A_DOTA.sql)** to create the required schema and tables.   
+- Run the **[database script](https://github.com/Jinkogule/A-DOTA/blob/main/A_DOTA.sql)** to create the required schema and tables.   
 - Install **[JDK 15](https://www.oracle.com/br/java/technologies/downloads/#java15)** (or a compatible version) and set the `JAVA_HOME` variable with the correct JDK path.
 - Download **[MySQL Connector/J](https://dev.mysql.com/downloads/connector/j/)** to connect the project to MySQL.  
 - Install **[Apache NetBeans IDE](https://netbeans.apache.org/front/main/index.html)** to run the project.
